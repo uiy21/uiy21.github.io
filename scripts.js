@@ -20,7 +20,7 @@ const casinos = [
         bonus: 1000,
         novelty: 6,
         url: "https://bit.ly/3YHRase",
-        description: "200% к первому депозиту и 200 фриспинов"
+        description: "+200% к первому депозиту и 200 фриспинов"
     },
     {
         name: "Starda",
@@ -28,7 +28,7 @@ const casinos = [
         bonus: 100,
         novelty: 1,
         url: "https://bit.ly/3juckvm",
-        description: "100% к первому депозиту и до 500 фриспинов"
+        description: "+100% к первому депозиту и до 500 фриспинов"
     },
     {
         name: "Rox",
@@ -36,7 +36,7 @@ const casinos = [
         bonus: 200,
         novelty: 1,
         url: "https://bit.ly/3sKDIGg",
-        description: "250 фриспинов и 200% к первому депозиту"
+        description: "250 фриспинов и +200% к первому депозиту"
     },
     {
         name: "Legzo",
