@@ -7,12 +7,12 @@ const promoCodes = [
 
 const casinos = [
     {
-        name: "Cat Casino",
-        image: "images/cat.jpg",
-        bonus: 100,
-        novelty: 5,
-        url: "https://bit.ly/3fNw4YQ",
-        description: "200 фриспинов и +325% за первые депозиты"
+        name: "1Win",
+        image: "images/1win.jpg",
+        bonus: 500,
+        novelty: 1,
+        url: "https://bit.ly/3Zr35fr",
+        description: "+500% на первые 4 депозита и cashback до 30% каждую неделю"
     },
     {
         name: "Gama",
@@ -23,20 +23,20 @@ const casinos = [
         description: "200% к первому депозиту и 200 фриспинов"
     },
     {
-        name: "Rox",
-        image: "images/rox.jpg",
-        bonus: 200,
-        novelty: 1,
-        url: "https://bit.ly/3sKDIGg",
-        description: "250 фриспинов и 200% к первому депозиту"
-    },
-    {
         name: "Starda",
         image: "images/starda.jpg",
         bonus: 100,
         novelty: 1,
         url: "https://bit.ly/3juckvm",
         description: "100% к первому депозиту и до 500 фриспинов"
+    },
+    {
+        name: "Rox",
+        image: "images/rox.jpg",
+        bonus: 200,
+        novelty: 1,
+        url: "https://bit.ly/3sKDIGg",
+        description: "250 фриспинов и 200% к первому депозиту"
     },
     {
         name: "Legzo",
@@ -47,12 +47,12 @@ const casinos = [
         description: "500 фриспинов и +100% к первому депозиту"
     },
     {
-        name: "1Win",
-        image: "images/1win.jpg",
-        bonus: 200,
-        novelty: 1,
-        url: "https://bit.ly/3Zr35fr",
-        description: "+500% на первые 4 депозита и cashback до 30% каждую неделю"
+        name: "Cat Casino",
+        image: "images/cat.jpg",
+        bonus: 100,
+        novelty: 5,
+        url: "https://bit.ly/3fNw4YQ",
+        description: "200 фриспинов и +325% за первые депозиты"
     }
     // ... add other casino objects here
 ];
