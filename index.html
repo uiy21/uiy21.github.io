@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casino Directory</title>
+    <title>Заносы Bonus</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Add this line for Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
@@ -24,27 +24,53 @@
     </section>
     <section class="sort-controls">
         <button id="sort-alpha">🔤 По алфавиту</button>
-        <button id="sort-bonus">💰 По сумме бонусов</button>
-        <button id="sort-novelty">🆕 Новые</button>
+        <button id="sort-bonus">💰 По бонусам</button>
+        <button id="sort-novelty">🆕 Новинки</button>
     </section>
     <section class="casino-list">
         <!-- Casino blocks will be generated here -->
     </section>
     <!-- Add the arrow and wrap the wheel and arrow in a container -->
-    <section class="wheel-of-luck">
-        <!-- <h2>Spin the Wheel of Luck for Promo Codes</h2> -->
-        <!-- <button id="spin-wheel">🎡 Spin the Wheel</button> -->
-        <!-- <div class="wheel-container">
+    <section class="wheel-of-luck hide-wheel">
+        <h2>Колесо удачи с промокодами</h2>
+        <button id="spin-wheel">🎡 Крутить колесо</button>
+        <div class="wheel-container">
             <!-- Replace the arrow character with an SVG arrow -->
-        <!-- <span class="arrow"> -->
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#f0f0f0"> -->
-        <!-- <path -->
-        <!-- d="M11.146 6.354a.5.5 0 0 1 .708 0l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 0 1-.708-.708L15.793 12l-4.647-4.646a.5.5 0 0 1 0-.708z" /> -->
-        <!-- </svg> -->
-        <!-- </span> -->
-        <!-- <img src="images/wheel.png" alt="Wheel of Luck" class="wheel" id="wheel"> -->
-        </div> -->
+            <span class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#f0f0f0">
+                    <path
+                        d="M11.146 6.354a.5.5 0 0 1 .708 0l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 0 1-.708-.708L15.793 12l-4.647-4.646a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </span>
+            <img src="images/wheel.png" alt="Wheel of Luck" class="wheel" id="wheel">
+        </div>
+    </section>
+    <section class="telegram-channel">
+        <h2>Присоединяйтесь к нашему Telegram-каналу с розыгрышами</h2>
+        <a href="https://t.me/zanos_weeks" target="_blank" class="telegram-link">
+            <i class="fab fa-telegram"></i> Присоединиться
+        </a>
+    </section>
 
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Перейти на сайт выбранного казино?</h2>
+            <h3 id="modal-casino-name"></h3>
+            <img id="modal-casino-image" src="" alt="" width="200">
+            <p id="modal-casino-description"></p>
+            <button id="modal-cancel" class="modal-button">Отменить</button>
+            <a id="modal-go" class="modal-button">Перейти</a>
+        </div>
+    </div>
+
+    <div id="promo-code-modal" class="modal">
+        <div class="modal-content">
+            <h2>Промокод:</h2>
+            <p id="promo-code-text"></p>
+            <button id="promo-code-copy">Скопировать</button>
+            <button id="promo-code-cancel">Отмена</button>
+        </div>
+    </div>
 
 
 </body>

@@ -169,33 +169,6 @@ button.active {
     border-color: #4a4a4a;
 }
 
-/* Add this code to styles.css */
-@media (max-width: 767px) {
-    .casino-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .casino-list {
-        grid-template-columns: 1fr;
-    }
-
-    .random-controls, .sort-controls {
-        flex-direction: column;
-    }
-
-    button {
-        margin: 5px 0;
-    }
-}
-
-/* Add this media query to styles.css */
-@media (max-width: 600px) {
-    .arrow {
-        left: 20%;
-    }
-}
 
 
 /* Add this code to styles.css */
@@ -210,4 +183,130 @@ button.active {
 
 .click-to-copy:hover {
     opacity: 1;
+}
+
+
+/* Add this code to styles.css */
+.hide-wheel {
+    display: none;
+}
+
+
+/* Add this code to styles.css */
+.telegram-channel {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 20px;
+    border: 1px solid #555;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.telegram-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #0088cc;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.telegram-link:hover {
+    background-color: #0077b3;
+}
+
+.telegram-link i {
+    margin-right: 5px;
+}
+
+
+/* Add this code to styles.css */
+@media (max-width: 767px) {
+    .casino-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ... other styles ... */
+
+@media (max-width: 480px) {
+    .casino-list {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        padding: 0 5px; /* Add padding to the sides */
+    }
+
+    .casino-item {
+        padding: 0 0px; /* Add padding to the casino items */
+    }
+
+    .random-controls, .sort-controls {
+        flex-direction: column;
+    }
+
+    button {
+        margin: 5px 0;
+    }
+}
+
+/* ... other styles ... */
+
+
+
+/* Add this media query to styles.css */
+@media (max-width: 600px) {
+    .arrow {
+        left: 20%;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(26, 26, 26, 0.8);
+}
+
+.modal-content {
+    background-color: #333;
+    color: #f0f0f0;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #555;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px; /* Limit the maximum width */
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.modal-button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 1px solid #555;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+
+.modal-button:hover {
+    background-color: #555;
+    color: white;
 }
