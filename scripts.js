@@ -74,19 +74,32 @@ const showPromoCodeModal = (promoCode) => {
 
     $("#promo-code-text").text(promoCode);
 
-    $("#promo-code-copy").click(() => {
-        copyToClipboard(promoCode);
-        promoCodeModal.fadeOut();
-    });
+    // Check if the promo code is not "Попробуй ещё раз"
+    if (promoCode !== "Попробуй ещё раз") {
+        // Show the copy button
+        $("#promo-code-copy").show();
 
+        // Add click event listener for copy button
+        $("#promo-code-copy").click(() => {
+            copyToClipboard(promoCode);
+            promoCodeModal.fadeOut();
+        });
+    } else {
+        // Hide the copy button
+        $("#promo-code-copy").hide();
+    }
+
+    // Add click event listener for cancel button
     $("#promo-code-cancel").click(() => {
         promoCodeModal.fadeOut();
     });
 };
 
+
 const spinWheel = () => {
     const wheel = $("#wheel");
     const spinDegrees = 360 * (5 + Math.floor(Math.random() * 5));
+    wheel.css("transition", "transform 5s ease-out");
     wheel.css("transform", `rotate(${spinDegrees}deg)`);
 
     $("#spin-wheel").addClass("inactive");
@@ -100,8 +113,14 @@ const spinWheel = () => {
         });
         showPromoCodeModal(randomPromoCode);
     }, 5000);
-    
+
+    // Reset the wheel rotation
+    setTimeout(() => {
+        wheel.css("transition", "none");
+        wheel.css("transform", "rotate(0deg)");
+    }, 5100);
 };
+
 
 $(document).ready(function () {
     $("#spin-wheel").click(() => spinWheel());
