@@ -1,7 +1,9 @@
 const promoCodes = [
-    "Скоро...",
-    "Скоро...",
-    "Скоро...",
+    "GAMR4STYZTP0",
+    "Попробуй ещё раз",
+    "GAMV59DCGRHE",
+    "Попробуй ещё раз",
+    "Попробуй ещё раз"
     // ... add other promo codes here
 ];
 
