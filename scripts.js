@@ -177,7 +177,7 @@ $(document).ready(function () {
     const highlightCasino = (index) => {
         $(".casino-item").css("box-shadow", "0 4px 6px rgba(0, 0, 0, 0.1)");
 
-        $(".casino-item").eq(index).css("box-shadow", "0 4px 6px rgba(0, 255, 0, 0.7)");
+        $(".casino-item").eq(index).css("box-shadow", "0 4px 6px rgba(0, 200, 200, 0.7)");
     };
 
     const randomSelect = () => {
