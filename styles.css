@@ -381,17 +381,18 @@ display: none;
 
 
             #notification-bar {
-                position: fixed;
+                position: static;
                 top: 0;
                 left: 0;
                 right: 0;
-                background-color: #333;
+                background-color: #ff0000;
                 color: #fff;
                 padding: 10px;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: space-around;
                 font-size: 14px;
+                z-index: 1000;
             }
             
             
@@ -417,4 +418,5 @@ display: none;
 
             #notification-bar button:hover {
             background-color: #555;
-            }                            
+            }           
+        

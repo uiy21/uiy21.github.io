@@ -123,6 +123,14 @@ const spinWheel = () => {
 
 
 $(document).ready(function () {
+const btnBezdep = document.getElementById("bezdep-promo");
+const wheelOfLuck = document.querySelector(".wheel-of-luck");
+
+btnBezdep.addEventListener("click", () => {
+  wheelOfLuck.scrollIntoView({ behavior: "smooth" });
+});
+
+    
     $("#spin-wheel").click(() => spinWheel());
 
     const createCasinoBlock = (casino) => {
@@ -240,6 +248,7 @@ $(document).ready(function () {
         randomSelect();
     });
     
+    
 
     const copyWebsiteLink = () => {
         const websiteLink = window.location.href;
@@ -249,17 +258,26 @@ $(document).ready(function () {
         textarea.select();
         document.execCommand("copy");
         document.body.removeChild(textarea);
-        closeNotificationBar(); // добавлен вызов функции для скрытия окна уведомления
-    };
-    
-    const closeNotificationBar = () => {
+        closeNotificationBar();
+        localStorage.setItem("notificationBarHidden", true); // сохраняем состояние скрытия окна уведомления в localStorage
+      };
+      
+      const closeNotificationBar = () => {
         const notificationBar = document.getElementById("notification-bar");
         notificationBar.style.display = "none";
-    };
-    
-    document.getElementById("copy-link").addEventListener("click", copyWebsiteLink);
-    document.getElementById("close-notification").addEventListener("click", closeNotificationBar);
-    
+        localStorage.setItem("notificationBarHidden", true); // сохраняем состояние скрытия окна уведомления в localStorage
+      };
+      
+      document.getElementById("copy-link").addEventListener("click", copyWebsiteLink);
+      
+      document.getElementById("close-notification").addEventListener("click", closeNotificationBar);
+      
+      // проверяем, было ли окно уведомления скрыто ранее
+      if (localStorage.getItem("notificationBarHidden")) {
+        const notificationBar = document.getElementById("notification-bar");
+        notificationBar.style.display = "none";
+      }
+      
 
     $(".sort-controls button").on("mouseover", function () {
         $(this).stop().animate({ backgroundColor: "#555" }, 300);
