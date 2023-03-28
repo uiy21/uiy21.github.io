@@ -78,6 +78,7 @@ const showPromoCodeModal = (promoCode) => {
     if (promoCode !== "Попробуй ещё раз") {
         // Show the copy button
         $("#promo-code-copy").show();
+        document.getElementById("spin-wheel").removeEventListener("click", spinWheel);
 
         // Add click event listener for copy button
         $("#promo-code-copy").click(() => {
@@ -87,6 +88,8 @@ const showPromoCodeModal = (promoCode) => {
     } else {
         // Hide the copy button
         $("#promo-code-copy").hide();
+        $("#spin-wheel").removeClass("promo-code")
+        document.getElementById("spin-wheel").addEventListener("click", spinWheel);
     }
 
     // Add click event listener for cancel button
@@ -287,7 +290,6 @@ btnBezdep.addEventListener("click", () => {
     $("#spin-wheel").off("click").on("click", function () {
         if ($(this).hasClass("promo-code")) {
             const promoCode = $(this).text();
-            copyToClipboard(promoCode);
             // Reset the button to its initial state
             $(this).text("🎡 Крутить колесо").removeClass("promo-code");
             hideClickToCopy();
