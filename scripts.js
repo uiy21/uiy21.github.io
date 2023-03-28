@@ -1,8 +1,8 @@
 const promoCodes = [
-    "GAMR4STYZTP0",
+    "GAMX5PWPXP93",
     "Попробуй ещё раз",
-    "GAMV59DCGRHE",
-    "Попробуй ещё раз",
+    "GAMD66G3EN1O",
+    "GAMC6MZGVKTP",
     "Попробуй ещё раз"
     // ... add other promo codes here
 ];
@@ -239,6 +239,26 @@ $(document).ready(function () {
     $("#random-select").click(() => {
         randomSelect();
     });
+    
+
+    const copyWebsiteLink = () => {
+        const websiteLink = window.location.href;
+        const textarea = document.createElement("textarea");
+        textarea.textContent = websiteLink;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        closeNotificationBar(); // добавлен вызов функции для скрытия окна уведомления
+    };
+    
+    const closeNotificationBar = () => {
+        const notificationBar = document.getElementById("notification-bar");
+        notificationBar.style.display = "none";
+    };
+    
+    document.getElementById("copy-link").addEventListener("click", copyWebsiteLink);
+    document.getElementById("close-notification").addEventListener("click", closeNotificationBar);
     
 
     $(".sort-controls button").on("mouseover", function () {

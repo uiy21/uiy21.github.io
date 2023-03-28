@@ -83,7 +83,7 @@ button.active {
     overflow: hidden;
     text-align: center;
     border: 1px solid #555;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #00ffff;
     animation: fadeIn 2s ease;
 }
 
@@ -128,13 +128,17 @@ margin-top: 50px;
 }
 
 .wheel {
-display: inline-block;
-max-width: 300px;
-height: auto;
-margin-top: 20px;
-transform-origin: center;
-transition: transform 5s ease-out;
+    display: inline-block;
+    max-width: 300px;
+    height: auto;
+    margin-top: 20px;
+    transform-origin: center;
+    transition: transform 5s ease-out;
+    box-shadow: 0 0 10px #00ffff;
+    border-radius: 50%;
+    pointer-events: none;
 }
+
 
 .wheel-container {
 display: flex;
@@ -202,7 +206,7 @@ display: none;
     background-color: #333;
     border-radius: 20px;
     border: 1px solid #555;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #00ffff;
     }
     
     .telegram-channel h3 {
@@ -225,6 +229,25 @@ display: none;
     box-shadow: 0 0 10px #00ffff;
     }
 
+
+    .telegram-link {
+        display: inline-block;
+        text-decoration: none;
+        color: #f0f0f0;
+        font-size: 18px;
+        padding: 10px 20px;
+        background-color: #20c9c9;
+        border-radius: 50px;
+        transition: background-color 0.3s;
+    }
+    
+    .telegram-link:hover {
+        background-color: #1ca5a5;
+    }
+    
+    .telegram-link i {
+        margin-right: 5px;
+    }
 
     .telegram-button:hover {
         background-color: #555;
@@ -355,3 +378,43 @@ display: none;
                 box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
             }
             
+
+
+            #notification-bar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 14px;
+            }
+            
+            
+            #notification-bar p {
+                margin: 0;
+                margin-right: 10px;
+            }
+            
+            #copy-link,
+            #close-notification {
+                background: none;
+                color: #fff;
+                border: 1px solid #fff;
+                padding: 5px 10px;
+                margin-left: 5px;
+                cursor: pointer;
+            }
+            
+            #close-notification {
+                border: none;
+                font-weight: bold;
+            }
+
+            #notification-bar button:hover {
+            background-color: #555;
+            }                            
