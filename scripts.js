@@ -261,25 +261,40 @@ btnBezdep.addEventListener("click", () => {
         textarea.select();
         document.execCommand("copy");
         document.body.removeChild(textarea);
-        closeNotificationBar();
-        localStorage.setItem("notificationBarHidden", true); // сохраняем состояние скрытия окна уведомления в localStorage
-      };
-      
-      const closeNotificationBar = () => {
+        hideNotificationBarFor24Hours();
+    };
+    
+    const closeNotificationBar = () => {
+        hideNotificationBarFor24Hours();
+    };
+    
+    const hideNotificationBarFor24Hours = () => {
         const notificationBar = document.getElementById("notification-bar");
         notificationBar.style.display = "none";
-        localStorage.setItem("notificationBarHidden", true); // сохраняем состояние скрытия окна уведомления в localStorage
-      };
+        const hideTime = new Date().getTime();
+        localStorage.setItem("notificationBarHidden", hideTime); // сохраняем время скрытия окна уведомления в localStorage
+    };
+    
+    // проверяем, было ли окно уведомления скрыто ранее и прошло ли 24 часа с момента скрытия
+    const hiddenTime = localStorage.getItem("notificationBarHidden");
+    if (hiddenTime) {
+        const currentTime = new Date().getTime();
+        const timePassed = currentTime - hiddenTime;
+        const hoursPassed = timePassed / (1000 * 60 * 60);
+    
+        if (hoursPassed < 24) {
+            const notificationBar = document.getElementById("notification-bar");
+            notificationBar.style.display = "none";
+        }
+    }
+    
       
       document.getElementById("copy-link").addEventListener("click", copyWebsiteLink);
       
       document.getElementById("close-notification").addEventListener("click", closeNotificationBar);
       
       // проверяем, было ли окно уведомления скрыто ранее
-      if (localStorage.getItem("notificationBarHidden")) {
-        const notificationBar = document.getElementById("notification-bar");
-        notificationBar.style.display = "none";
-      }
+
       
 
     $(".sort-controls button").on("mouseover", function () {
