@@ -5,7 +5,10 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #1a1a1a;
     color: #f0f0f0;
-    background-image: radial-gradient(circle, #1a1a1a, #000000);
+    background-image: url('images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 header {
@@ -427,3 +430,57 @@ display: none;
             background-color: #555;
             }           
         
+
+
+/* ... other CSS code ... */
+
+.telegram-window {
+    background-color: #333;
+    border-radius: 10px;
+    border: 1px solid #555;
+    box-shadow: 0 0 10px #00ffff;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .telegram-window h4 {
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+  }
+  
+  .telegram-window p {
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #00ffff;
+  }
+  
+  .telegram-window-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 16px;
+    padding: 8px 15px;
+    background-color: #20c9c9;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+  }
+  
+  .telegram-window-link:hover {
+    background-color: #1ca5a5;
+  }
+  
+  .telegram-window-link i {
+    margin-right: 5px;
+  }
+  
+  /* ... other CSS code ... */
+/* ... other CSS code ... */
+
