@@ -55,6 +55,14 @@ const casinos = [
         novelty: 5,
         url: "https://bit.ly/3fNw4YQ",
         description: "200 фриспинов и +325% за первые депозиты"
+    },
+    {
+        name: "DRIP",
+        image: "images/drip.jpg",
+        bonus: 100000,
+        novelty: 7,
+        url: "https://bit.ly/42hK7rV",
+        description: "200 фриспинов и +325% за первые депозиты"
     }
     // ... add other casino objects here
 ];
