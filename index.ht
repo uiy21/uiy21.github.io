@@ -1,0 +1,946 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script async data-skip-moving="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6109638387739871"></script>
+<script data-skip-moving="true">(function(w, d) {var v = w.frameCacheVars = {'CACHE_MODE':'HTMLCACHE','storageBlocks':[],'dynamicBlocks':{'y0XwfU':'d41d8cd98f00','2DJmFo':'d41d8cd98f00','ALOAcH':'d41d8cd98f00','Zg1Ab0':'d41d8cd98f00','footerad':'d41d8cd98f00','vhh5NV':'d41d8cd98f00','yn3v0T':'3e032bf9c623'},'AUTO_UPDATE':true,'AUTO_UPDATE_TTL':'0','version':'2'};var inv = false;if (v.AUTO_UPDATE === false){if (v.AUTO_UPDATE_TTL && v.AUTO_UPDATE_TTL > 0){var lm = Date.parse(d.lastModified);if (!isNaN(lm)){var td = new Date().getTime();if ((lm + v.AUTO_UPDATE_TTL * 1000) >= td){w.frameRequestStart = false;w.preventAutoUpdate = true;return;}inv = true;}}else{w.frameRequestStart = false;w.preventAutoUpdate = true;return;}}var r = w.XMLHttpRequest ? new XMLHttpRequest() : (w.ActiveXObject ? new w.ActiveXObject("Microsoft.XMLHTTP") : null);if (!r) { return; }w.frameRequestStart = true;var m = v.CACHE_MODE; var l = w.location; var x = new Date().getTime();var q = "?bxrand=" + x + (l.search.length > 0 ? "&" + l.search.substring(1) : "");var u = l.protocol + "//" + l.host + l.pathname + q;r.open("GET", u, true);r.setRequestHeader("BX-ACTION-TYPE", "get_dynamic");r.setRequestHeader("X-Bitrix-Composite", "get_dynamic");r.setRequestHeader("BX-CACHE-MODE", m);r.setRequestHeader("BX-CACHE-BLOCKS", v.dynamicBlocks ? JSON.stringify(v.dynamicBlocks) : "");if (inv){r.setRequestHeader("BX-INVALIDATE-CACHE", "Y");}try { r.setRequestHeader("BX-REF", d.referrer || "");} catch(e) {}if (m === "APPCACHE"){r.setRequestHeader("BX-APPCACHE-PARAMS", JSON.stringify(v.PARAMS));r.setRequestHeader("BX-APPCACHE-URL", v.PAGE_URL ? v.PAGE_URL : "");}r.onreadystatechange = function() {if (r.readyState != 4) { return; }var a = r.getResponseHeader("BX-RAND");var b = w.BX && w.BX.frameCache ? w.BX.frameCache : false;if (a != x || !((r.status >= 200 && r.status < 300) || r.status === 304 || r.status === 1223 || r.status === 0)){var f = {error:true, reason:a!=x?"bad_rand":"bad_status", url:u, xhr:r, status:r.status};if (w.BX && w.BX.ready && b){BX.ready(function() {setTimeout(function(){BX.onCustomEvent("onFrameDataRequestFail", [f]);}, 0);});}w.frameRequestFail = f;return;}if (b){b.onFrameDataReceived(r.responseText);if (!w.frameUpdateInvoked){b.update(false);}w.frameUpdateInvoked = true;}else{w.frameDataString = r.responseText;}};r.send();var p = w.performance;if (p && p.addEventListener && p.getEntries && p.setResourceTimingBufferSize){var e = 'resourcetimingbufferfull';var h = function() {if (w.BX && w.BX.frameCache && w.BX.frameCache.frameDataInserted){p.removeEventListener(e, h);}else {p.setResourceTimingBufferSize(p.getEntries().length + 50);}};p.addEventListener(e, h);}})(window, document);</script>
+<script data-skip-moving="true">(function(w, d, n) {
+
+var cl = "bx-core";
+var ht = d.documentElement;
+var htc = ht ? ht.className : undefined;
+if (htc === undefined || htc.indexOf(cl) !== -1)
+{
+return;
+}
+
+var ua = n.userAgent;
+if (/(iPad;)|(iPhone;)/i.test(ua))
+{
+cl += " bx-ios";
+}
+else if (/Android/i.test(ua))
+{
+cl += " bx-android";
+}
+
+cl += (/(ipad|iphone|android|mobile|touch)/i.test(ua) ? " bx-touch" : " bx-no-touch");
+
+cl += w.devicePixelRatio && w.devicePixelRatio >= 2
+? " bx-retina"
+: " bx-no-retina";
+
+var ieVersion = -1;
+if (/AppleWebKit/.test(ua))
+{
+cl += " bx-chrome";
+}
+else if ((ieVersion = getIeVersion()) > 0)
+{
+cl += " bx-ie bx-ie" + ieVersion;
+if (ieVersion > 7 && ieVersion < 10 && !isDoctype())
+{
+cl += " bx-quirks";
+}
+}
+else if (/Opera/.test(ua))
+{
+cl += " bx-opera";
+}
+else if (/Gecko/.test(ua))
+{
+cl += " bx-firefox";
+}
+
+if (/Macintosh/i.test(ua))
+{
+cl += " bx-mac";
+}
+
+ht.className = htc ? htc + " " + cl : cl;
+
+function isDoctype()
+{
+if (d.compatMode)
+{
+return d.compatMode == "CSS1Compat";
+}
+
+return d.documentElement && d.documentElement.clientHeight;
+}
+
+function getIeVersion()
+{
+if (/Opera/i.test(ua) || /Webkit/i.test(ua) || /Firefox/i.test(ua) || /Chrome/i.test(ua))
+{
+return -1;
+}
+
+var rv = -1;
+if (!!(w.MSStream) && !(w.ActiveXObject) && ("ActiveXObject" in w))
+{
+rv = 11;
+}
+else if (!!d.documentMode && d.documentMode >= 10)
+{
+rv = 10;
+}
+else if (!!d.documentMode && d.documentMode >= 9)
+{
+rv = 9;
+}
+else if (d.attachEvent && !/Opera/.test(ua))
+{
+rv = 8;
+}
+
+if (rv == -1 || rv == 8)
+{
+var re;
+if (n.appName == "Microsoft Internet Explorer")
+{
+re = new RegExp("MSIE ([0-9]+[\.0-9]*)");
+if (re.exec(ua) != null)
+{
+rv = parseFloat(RegExp.$1);
+}
+}
+else if (n.appName == "Netscape")
+{
+rv = 11;
+re = new RegExp("Trident/.*rv:([0-9]+[\.0-9]*)");
+if (re.exec(ua) != null)
+{
+rv = parseFloat(RegExp.$1);
+}
+}
+}
+
+return rv;
+}
+
+})(window, document, navigator);</script>
+
+<link href="/bitrix/js/ui/fonts/opensans/ui.font.opensans.min.css?16565705922320" type="text/css"  rel="stylesheet" />
+<link href="/bitrix/js/main/popup/dist/main.popup.bundle.min.css?165589901323804" type="text/css"  rel="stylesheet" />
+<link href="/bitrix/cache/css/s1/lapkins/template_7350e46a6ec31d67f5ea0ef6036b2301/template_7350e46a6ec31d67f5ea0ef6036b2301_v1.css?1682497840143528" type="text/css"  data-template-style="true" rel="stylesheet" />
+<meta name="keywords" content="Бирманская кошка, порода, кошка, описание, фото, цена, котенок, характер, дрессировка, уход, сколько стоит, купить" />
+<meta name="description" content="Бирманские кошки отличаются отменным здоровьем и дружелюбным нравом, обладают тихим и мелодичным голосом. Представители этой породы не доставляют хозяевам особых хлопот." />
+
+
+
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://lapkins.ru/upload/iblock/e54/e54c0e4bd5d9d52f19967c7fdc05e1ef.jpg" />
+
+<title>Бирманская кошка: все о кошке, фото, описание породы, характер, цена</title>
+
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:site_name" content="Lapkins.ru" />
+<meta property="og:url" content="https://lapkins.ru/cat/birmanskaya-koshka/" />
+<meta property="og:title" content="Бирманская кошка: все о кошке, фото, описание породы, характер, цена" />
+<meta property="og:description" content="Бирманские кошки отличаются отменным здоровьем и дружелюбным нравом, обладают тихим и мелодичным голосом. Представители этой породы не доставляют хозяевам особых хлопот." />
+</head>
+<body>
+
+<div id="bxdynamic_y0XwfU_start" style="display:none"></div><div id="bxdynamic_y0XwfU_end" style="display:none"></div>
+<div class="wrapper">
+
+    <div class="page">
+        <span class="hidden-mask"></span>
+        <div class="content">
+            <div class="r-side">
+
+<div class="path">
+	<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span itemprop="title">Главная</span></a></span>&nbsp;&nbsp;/&nbsp;&nbsp;
+				<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/cat/" itemprop="url" ><span itemprop="title">Кошки</span></a></span>&nbsp;&nbsp;/&nbsp;&nbsp;					<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/cat/birmanskaya-koshka/" itemprop="url" class="last_url_bread"><span itemprop="title">Бирманская кошка</span></a></span>			</div>
+
+<h1>Бирманская кошка</h1>
+
+<div class="pm-hold">
+<div class="pet-menu">
+    <nav class="pet-menu-scroll">
+        <a href="/cat/birmanskaya-koshka/" class="act">Описание</a>
+        <a href="/cat/birmanskaya-koshka/forum/">Обсуждения</a>
+		<a href="/cat/birmanskaya-koshka/otzivi/">Отзывы</a>
+        <a href="/cat/birmanskaya-koshka/photo/">Фото</a>
+                <a href="/cat/birmanskaya-koshka/pitomniki/">Питомники</a>
+    </nav>
+</div>
+</div>
+<div class="pet-inside">
+	<div class="pet-head">
+		<div class="pet-ava"><img src="/upload/iblock/326/32690cdbc3072d6207f63c8d65029133.jpg" alt="Бирманская кошка"></div>
+		<div class="pet-prew">
+									<span class="takje">Другие названия:
+									<a href="/cat/birmanskaya-koshka/">Священная Бирманская</a>,														<a href="/cat/birmanskaya-koshka/"> Бирма</a>												</span>
+
+			<p>Бирманские кошки отличаются отменным здоровьем и дружелюбным нравом, обладают тихим и мелодичным голосом. Представители этой породы не доставляют хозяевам особых хлопот.</p>
+			
+<div class="share" data-share-data='{"url": "https://lapkins.ru/cat/birmanskaya-koshka/", "img": "https://lapkins.ru/upload/iblock/e54/e54c0e4bd5d9d52f19967c7fdc05e1ef.jpg", "title": "Бирманская кошка – все о породе от А до Я", "text": "Бирманские кошки отличаются отменным здоровьем и дружелюбным нравом, обладают тихим и мелодичным голосом. Представители этой породы не доставляют хозяевам особых хлопот."}'>
+<span class="all-share"></span>
+<span class="sharea vk-share vk" onclick="share.vk($(this))"><span>вконтакте</span></span>
+<span class="sharea fb-share fb" onclick="share.facebook($(this))"><span>facebook</span></span>
+<span class="sharea tw-share tw" onclick="share.twitter($(this))"><span>twitter</span></span>
+</div>
+
+	</div>
+
+</div>
+
+        <div class="ob-line-hid">
+            <div class="ob-line nopobf">
+                <div class="ob-line2">
+
+                                    
+                    <div class="foto-img" >
+                        <a href="/upload/uf/5f5/5f5ac46a1738e48ca1c086e67fd52b3e.jpg" class="wf-insta__link" data-fancybox="images" data-type="image" data-link="https://www.flickr.com/photos/99752631@N06/32579331124/" data-cap="Sealtabby Birman" data-username="Rune Breiset" data-avatar="/upload/uf/fe5/fe5a688ffe63becd86c6b23029ff5704.jpg">
+                            <img src="/upload/resize_cache/uf/5f5/293_293_2/5f5ac46a1738e48ca1c086e67fd52b3e.jpg" alt="Бирманская кошка">
+                        </a>
+                    </div>
+
+                                     
+                    <div class="foto-img" >
+                        <a href="/upload/uf/7d9/7d9698e2ff3aab0bcc66a2fc48dd2a23.jpg" class="wf-insta__link" data-fancybox="images" data-type="image" data-link="https://www.flickr.com/photos/77929818@N05/8550111936/" data-cap="Muffin" data-username="Jim Sedgwick" data-avatar="/upload/uf/9b2/9b2b34de58ea23770955503ed7849aa0.jpg">
+                            <img src="/upload/resize_cache/uf/7d9/293_293_2/7d9698e2ff3aab0bcc66a2fc48dd2a23.jpg" alt="Бирманская кошка">
+                        </a>
+                    </div>
+
+                                     
+                    <div class="foto-img" >
+                        <a href="/upload/uf/691/6911607e2268c61a5a1c9d32c03e9d2b.jpg" class="wf-insta__link" data-fancybox="images" data-type="image" data-link="https://www.flickr.com/photos/jgrosjean/36963928331/" data-cap="WhiteWalkerCat" data-username="7H3M4R713N" data-avatar="/upload/uf/612/612e56d1b723a5a5169e7ce969ef975a.jpg">
+                            <img src="/upload/resize_cache/uf/691/293_293_2/6911607e2268c61a5a1c9d32c03e9d2b.jpg" alt="Бирманская кошка">
+                        </a>
+                    </div>
+
+                                 </div>
+            </div>
+        </div>
+        <div class="but-div"><a href="/cat/birmanskaya-koshka/photo/" class="big-button">Все фото бирманской кошки</a></div>
+<div id="bxdynamic_2DJmFo_start" style="display:none"></div><div id="bxdynamic_2DJmFo_end" style="display:none"></div>
+
+<div class="list">
+
+<strong>Содержание:</strong>
+<ul class="soder">
+<li><a href="#info">Краткая информация</a></li>
+<li><a href="#moment">Основные моменты</a></li>
+<li><a href="#harakter">Характеристика породы</a></li>
+<li><a href="#gl1">История породы бирманская кошка</a></li><li><a href="#gl2">Внешность бирманской кошки</a></li><li><a href="#gl3">Характер бирманских кошек</a></li><li><a href="#gl4">Уход и содержание</a></li><li><a href="#gl5">Кормление</a></li><li><a href="#gl6">Здоровье и болезни бирманской кошки</a></li><li><a href="#gl7">Как выбрать котенка</a></li><li><a href="#gl8">Сколько стоит бирманская кошка</a></li></ul>
+</div>
+
+<h2 id="info">Краткая информация</h2>
+
+<ul class="info">
+	<li><strong>Название породы:</strong>	Бирманская кошка</li>
+		<li><strong>Страна происхождения:</strong>	Мьянма</li>
+			<li><strong>Время зарождения породы:</strong>	1925 год</li>
+				<li><strong>Вес:</strong>	от 4,5 до 8 кг</li>
+				<li><strong>Продолжительность жизни:</strong>	14-16 лет</li>
+				</ul>
+<h2 id="moment">Основные моменты</h2>
+<ul class="info-lapa">
+<li>Бирма – кошка средних размеров. При этом она выглядит массивной, даже величественной. Бирманская кошка сложена пропорционально, это физически крепкое животное.</li>
+<li>Характер у кошки довольно спокойный, даже уравновешенный, то есть излишне пассивной или слишком бурной ее не назовешь.</li>
+<li>Отличается игривостью, дружелюбием, ласковостью. Эти коммуникативные качества в большей степени представлены у котов.</li>
+<li>Отношения с другими домашними  животными, будь то собаки или кошки других пород, самые миролюбивые – бирма легко находит общий язык со всеми. Однако может ревновать их к хозяину.</li>
+<li>Кошка быстро находит контакт с детьми, привязывается к младшим членам семьи, с удовольствием с ними общается и играет.</li>
+<li>Отличается чрезвычайным любопытством, в прямом смысле везде сует свой нос. Одновременно с этим слишком настойчива вплоть до навязчивости, умеет добиваться от хозяев того, чего хочет.</li>
+<li>Бирманская кошка – самодостаточное животное с сильной энергетикой, великолепная охотница. Одиночество и безразличное к себе отношение переносит очень болезненно.</li>
+<li>Отличительная черта породы – окрас, меняющийся с возрастом. Маленькие котята белоснежного цвета, но по мере взросления появляются колор-пойнты, белые пятна на лапах. Окрас окончательно формируется не раньше, чем к полутора годам.</li></ul>
+
+	<div class="start">
+		<div class="start-img">
+	
+<div class="lazy-load" data-original='/upload/iblock/e54/e54c0e4bd5d9d52f19967c7fdc05e1ef.jpg' data-alt="Бирманская кошка">
+<noscript data-original='/upload/iblock/e54/e54c0e4bd5d9d52f19967c7fdc05e1ef.jpg' data-alt="Бирманская кошка">
+<img src='/upload/iblock/e54/e54c0e4bd5d9d52f19967c7fdc05e1ef.jpg' alt="Бирманская кошка">
+</noscript>
+</div>
+
+			
+		</div>
+		<div class="start-text">
+			<p><strong>Бирманская кошка</strong>, или <strong>Священная бирма</strong> относится к очень древним породам, известность к которой пришла несколько веков назад. Будучи в наше время среди всех усатых и хвостатых одним из самых популярных домашних питомцев, таинственная бирма не перестает удивлять своих хозяев, открывая всё новые и новые грани своего характера. Остановив однажды свой выбор на бирманской кошке, можете не сомневаться в его правильности. Бирма послушная и нежная, с хорошими, почти аристократическими манерами. Общительность сочетается в ней с выразительным умом. Бирма приветлива и очень любопытна. Когда в доме появляются гости, она легко идет на контакт, совершенно не боясь новых людей. Особенно представители этой породы порадуют любителей брать кошек на руки и на колени: с сопротивлением вы не столкнетесь – скорее наоборот.</p>
+		</div>
+<div id="bxdynamic_ALOAcH_start" style="display:none"></div><div id="bxdynamic_ALOAcH_end" style="display:none"></div>	</div>
+
+<h2 id="harakter">Характеристика породы</h2>
+
+	
+<div class="stat-pet">
+
+<div class="spo">
+<div class="s-title">Активность <span class="wtf">?</span></div>
+<div class="s-text">Низкая (<span class="hrm">Рейтинг </span>2/5)</div>
+<div class="progress">
+<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="spo">
+<div class="s-title">Ласковость <span class="wtf">?</span></div>
+<div class="s-text">Очень ласковая (<span class="hrm">Рейтинг </span>5/5)</div>
+<div class="progress">
+<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="spo">
+<div class="s-title">Линька <span class="wtf">?</span></div>
+<div class="s-text">Умеренная (<span class="hrm">Рейтинг </span>3/5)</div>
+<div class="progress">
+<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="spo">
+<div class="s-title">Потребность в уходе <span class="wtf">?</span></div>
+<div class="s-text">Минимальная (<span class="hrm">Рейтинг </span>1/5)</div>
+<div class="progress">
+<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="spo">
+<div class="s-title">Здоровье <span class="wtf">?</span></div>
+<div class="s-text">Среднее (<span class="hrm">Рейтинг </span>3/5)</div>
+<div class="progress">
+<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="spo">
+<div class="s-title">Общительность <span class="wtf">?</span></div>
+<div class="s-text">Очень высокая (<span class="hrm">Рейтинг </span>5/5)</div>
+<div class="progress">
+<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="spo">
+<div class="s-title">Игривость <span class="wtf">?</span></div>
+<div class="s-text">Очень игривая (<span class="hrm">Рейтинг </span>5/5)</div>
+<div class="progress">
+<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="spo">
+<div class="s-title">Дружелюбность <span class="wtf">?</span></div>
+<div class="s-text">Очень дружелюбная (<span class="hrm">Рейтинг </span>5/5)</div>
+<div class="progress">
+<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="spo">
+<div class="s-title">Интеллект <span class="wtf">?</span></div>
+<div class="s-text">Очень умная (<span class="hrm">Рейтинг </span>5/5)</div>
+<div class="progress">
+<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+
+<span class="podpis">*Характеристика породы Бирманская кошка основана на оценке экспертов lapkins.ru и отзывах владельцев кошки.</span>
+
+</div>
+	                                                        
+        				<div><h2 id="gl1">История породы бирманская кошка</h2>
+
+<div class='img-right'><a data-fancybox="gallery" data-caption='Бирманская кошка' href='/upload/iblock/8db/8db59958ef62c5ba0d14c98b61727967.jpg'  title="Бирманская кошка" class="fancybox" ><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/8db/412_2150_1/8db59958ef62c5ba0d14c98b61727967.jpg' data-alt="Бирманская кошка"><noscript  data-class="article_pic" data-original='/upload/resize_cache/iblock/8db/412_2150_1/8db59958ef62c5ba0d14c98b61727967.jpg' data-alt="Бирманская кошка"><img     src='/upload/resize_cache/iblock/8db/412_2150_1/8db59958ef62c5ba0d14c98b61727967.jpg' width='411' height='620' alt="Бирманская кошка"  class="article_pic   " /></noscript></div></a><div class='img_text'>Бирманская кошка</div></div><p>Название породы говорит об исторической родине этих кошек, государстве Бирма на западе полуострова Индокитай, сменившем в 1989 году свое название на Мьянму.</p>
+
+<p>Первые бирманские кошки оказались на Старом континенте в 1919 году. Отдельной породой их признали в 1925 году во Франции. В годы Второй мировой войны генотип предков современных бирманцев был практически утерян. Но в результате селекции и скрещивания с <a href="/cat/siamskaya-koshka/" class="ph">сиамскими</a> и <a href="/cat/persidskaya-koshka/" class="ph">персидскими кошками</a>, священная бирма такой, какой мы ее знаем сегодня, стала уже к середине прошлого века.</p>
+
+<p>Первоначальная история зарождения породы, то есть период до появления в Европе, уходит корнями в глубину веков, и практически невозможно установить, откуда к нам пришли эти очень умные и наделенные особым шармом домашние животные. Доподлинно известно лишь то, что эти кошки в античные времена обитали в буддистских храмах на территории Бирмы, оберегая их от набегов грабителей и защищая от темных потусторонних сил.</p>
+
+<p>С историей породы связана живописная легенда, переносящая нас в те далекие времена. В одном из горных храмов монахи-буддисты поклонялись голубоглазой богине Цунь Хуаньце. Ее почитали как проводницу душ умерших в загробное царство. Некоторые монахи после смерти почему-то не попадали в рай и, по поверью, возвращались на грешную землю в кошачьем обличье. Когда на территории монастыря стали появляться чёрно-белые кошки с желтыми глазами, сомнений ни у кого не осталось: это посланники Цунь Хуаньце. Соответственно, и относились к ним с особым почтением.</p>
+
+<p>Один такой кот по кличке Синх прижился у старшего монаха по имени Мун Ха. От него, как гласит легенда, и произошла бирманская кошка. Однажды в храм нагрянули разбойники, желавшие поживиться его богатствами и особенно статуей голубоглазой богини. Монахи встали на защиту своей обители, но силы оказались неравными. От рук бандитов погиб и Мун Ха, упавший намертво прямо к ногам Цунь Хуаньце. И тут произошло что-то невероятное. На голову погибшего хозяина спрыгнул Синх, шерсть которого словно вспыхнула, озарившись ярким сиянием. Грабители испугались, и у монахов получилось прогнать их. Верный кот лег рядом с бездыханным телом Мун Ха и не отходил целую неделю, после чего умер.</p>
+
+<div class='img-right'><a data-fancybox="gallery" data-caption='Бирманский котенок' href='/upload/iblock/7ec/7ec09ff7f0f0c4ea4b1728cb9f139936.jpg'  title="Бирманский котенок" class="fancybox" ><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/7ec/412_2150_1/7ec09ff7f0f0c4ea4b1728cb9f139936.jpg' data-alt="Бирманский котенок"><noscript  data-class="article_pic" data-original='/upload/resize_cache/iblock/7ec/412_2150_1/7ec09ff7f0f0c4ea4b1728cb9f139936.jpg' data-alt="Бирманский котенок"><img     src='/upload/resize_cache/iblock/7ec/412_2150_1/7ec09ff7f0f0c4ea4b1728cb9f139936.jpg' width='412' height='463' alt="Бирманский котенок"  class="article_pic   " /></noscript></div></a><div class='img_text'>Бирманский котенок</div></div><p>После этих событий внешний облик усато-мурлычущих обитателей монастыря стал разительно меняться. Глаза из жёлтого стали ярко-голубого цвета, а чёрно-белая шерсть приобрела золотистый оттенок. На мордочках проступила темная маска, потемнели также хвост и ушки. Благодаря этому преданию бирманских кошек стали называть священными. Считалось, что если плохо обойтись с представителем этой породы, обидеть его, то такого человека ждут неприятности и его обязательно покарают высшие силы.</p>
+
+<p>Долгое время эта порода была известна только в самой Бирме и других государствах Индокитая. Остальной мир узнал о ней только в начале прошлого века, когда миллионер Вандербильт привез в 1919 году священную бирму во Францию. Он приобрёл двух котят, заплатив за них баснословные деньги, но до новой родины добрался только один. Эта особь женского пола и произвела на свет первых европейских бирманцев.</p>
+
+<p>Породу официально зарегистрировали только в 1925 году, дав ей название согласно легенде – священная бирма. Она сразу же завоевала огромную популярность в светских кругах того времени. Котята стоили очень и очень дорого, и позволить себе купить их могли немногие. Скорее всего, именно по этой причине в годы Второй мировой войны породе стало угрожать исчезновение. Каким-то чудом поклонники смогли сохранить одного кота и одну кошку. Стараниями селекционеров бирма выжила и начала расширять свою популяцию.</p>
+
+<p>Со второй половины прошлого века пушистая бирманская богиня начала обосновываться и в других странах. В 1966 году первые голубоглазые кошки попали в Соединенные Штаты, а в Великобританию их завезли годом позже, в 1967-м.</p>
+
+<div class="img-two"><div class='img-two-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/5c2/5c2d9c0fa2ad99f8322e7b5c97d7c007.jpg'  title="" class="fancybox"><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/5c2/512_342_2/5c2d9c0fa2ad99f8322e7b5c97d7c007.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/5c2/512_342_2/5c2d9c0fa2ad99f8322e7b5c97d7c007.jpg' data-alt="Бирманская кошка"><img src='/upload/resize_cache/iblock/5c2/512_342_2/5c2d9c0fa2ad99f8322e7b5c97d7c007.jpg'  alt="Бирманская кошка"  class="article_pic   " /></noscript></div></a></div><div class='img-two-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/776/7760f2f00cb2145d1d6fecfa57d06b6a.jpg'  title="" class="fancybox"><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/776/512_342_2/7760f2f00cb2145d1d6fecfa57d06b6a.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/776/512_342_2/7760f2f00cb2145d1d6fecfa57d06b6a.jpg' data-alt="Бирманская кошка"><img src='/upload/resize_cache/iblock/776/512_342_2/7760f2f00cb2145d1d6fecfa57d06b6a.jpg'  alt="Бирманская кошка"  class="article_pic   " /></noscript></div></a></div></div>
+
+
+<h2>Видео: Бирманская кошка</h2>
+
+
+<div class="video-informer"><iframe class="iframe_max ytfr" src="https://www.youtube.com/embed/Gcd5444bjXo?rel=0&amp;showinfo=0" allowfullscreen=""></iframe></div>
+
+<div id="bn_container_player">
+    <div id="bxdynamic_bn_container_player_start" style="display:none"></div><div id="bxdynamic_bn_container_player_end" style="display:none"></div></div>
+
+<h2 id='gl2'>Внешность бирманской кошки</h2>
+
+<p>Священная бирма – кошка средних размеров, окрас которой напоминает расцветку ее сиамских собратьев. Шерсть у неё мягкая и нежная. В идеале особь этой породы мех имеет длинный и шелковистый, а окрас – колор-пойнт. Отличительная черта бирманцев, можно сказать, их визитка – это ярко-голубые глаза и белые «носочки» на лапах.</p>
+
+<div class='img-right'><a data-fancybox="gallery" data-caption='Пушистый красавец' href='/upload/iblock/a76/a7672ec0bdbcd1e7f4d270708474a33a.jpg'  title="Пушистый красавец" class="fancybox" ><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/a76/412_2150_1/a7672ec0bdbcd1e7f4d270708474a33a.jpg' data-alt="Пушистый красавец"><noscript  data-class="article_pic" data-original='/upload/resize_cache/iblock/a76/412_2150_1/a7672ec0bdbcd1e7f4d270708474a33a.jpg' data-alt="Пушистый красавец"><img     src='/upload/resize_cache/iblock/a76/412_2150_1/a7672ec0bdbcd1e7f4d270708474a33a.jpg' width='412' height='606' alt="Пушистый красавец"  class="article_pic   " /></noscript></div></a><div class='img_text'>Пушистый красавец</div></div><p>Особенной любовью эти кошки пользуются у тех, кто в восторге от окраса сиамцев, но недолюбливает последних за худощавое строение и своенравное поведение. Отдушину в священной бирме находят и поклонники гималайских кошек, но не любящие последних за их короткое и приземистое тело. Бирманская кошка в этом плане настоящая находка, она некий средний вариант, своего рода баланс между этими двумя породами. А в качестве «бонуса» хозяева получают ее покладистый характер и уживчивость.</p>
+
+<h3>Голова</h3>
+
+<p>Она у бирманцев пропорциональная, практически круглой формы, широкая и выразительная. Длина несколько превосходит ширину, лоб на фоне довольно округленного черепа отличается некоторой выпуклостью.</p>
+
+<p>Мордочка хорошо развита: широкая, округлой формы, с полными и выделяющимися щеками. Она словно «скрыта» под темной маской. Скулы выпирают. Подбородок крепкий и сильный.</p>
+
+<p>Нос средней длины, «римский», переход (TICA) ото лба к мордочке чётко очерчен (FIFe – без перехода).</p>
+
+<h3>Глаза</h3>
+
+<p>Глаза у бирманской кошки большие, выразительные, почти круглой формы, широко поставленные. Сапфирово-голубые, их цвет может варьироваться от светло-голубого до темно-голубого. Темный оттенок глаз более предпочтителен.</p>
+
+<h3>Уши</h3>
+
+<p>Расположены по бокам головы, заметен легкий наклон вперед. Размер – средний, кончики округлены. Могут быть расставлены как умеренно, так и широко. Внутренняя часть ушной раковины выразительно опушена.</p>
+
+<h3>Шея</h3>
+
+<p>Шея бирманских кошек бывает короткой или средней длины, мускулистая и широкая.</p>
+
+<div class='img-w-center'><a data-fancybox="gallery" data-caption='Мордочка бирманской кошки' href='/upload/iblock/11e/11e2604dab411867c4e574d2c4ce8164.jpg' title="Мордочка бирманской кошки" class="fancybox"><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/11e/1024_2150_1/11e2604dab411867c4e574d2c4ce8164.jpg' data-alt="Мордочка бирманской кошки"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/11e/1024_2150_1/11e2604dab411867c4e574d2c4ce8164.jpg' data-alt="Мордочка бирманской кошки"><img src='/upload/resize_cache/iblock/11e/1024_2150_1/11e2604dab411867c4e574d2c4ce8164.jpg'     alt="Мордочка бирманской кошки"  class="article_pic   " /></noscript></div></a><div class='img_text'>Мордочка бирманской кошки</div></div>
+
+<h3>Тело</h3>
+
+<p>Приземистое, удлинённой формы и плотной конституции, с хорошо развитой и крепкой мускулатурой. Костная структура мощная. Средний вес взрослого бирманского кота составляет около 6 кг.</p>
+
+<h3>Ноги и лапы</h3>
+
+<p>Ноги толстые, сильные, средней длины, отличаются мускулистостью. На ногах при существующих вариациях окраса могут проявляться кольца. Крупные, крепкие и круглые лапки, между пальцами – пучки шерсти.</p>
+
+<h3>Хвост</h3>
+
+<p>Пушистый, длина средняя, окрас равномерно тёмный. Пушистый кончик. Бирманец обычно «носит» свой хвост приподнятым.</p>
+
+<h3>Окрас</h3>
+
+<div class='img-right'><a data-fancybox="gallery" data-caption='Бирманская кошка с рыжими отметинами' href='/upload/iblock/0d8/0d89e9825421db5bfe826fda7fcbb4ea.jpg'  title="Бирманская кошка с рыжими отметинами" class="fancybox" ><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/0d8/412_2150_1/0d89e9825421db5bfe826fda7fcbb4ea.jpg' data-alt="Бирманская кошка с рыжими отметинами"><noscript  data-class="article_pic" data-original='/upload/resize_cache/iblock/0d8/412_2150_1/0d89e9825421db5bfe826fda7fcbb4ea.jpg' data-alt="Бирманская кошка с рыжими отметинами"><img     src='/upload/resize_cache/iblock/0d8/412_2150_1/0d89e9825421db5bfe826fda7fcbb4ea.jpg' width='412' height='499' alt="Бирманская кошка с рыжими отметинами"  class="article_pic   " /></noscript></div></a><div class='img_text'>Бирманская кошка с рыжими отметинами</div></div><p>Для бирманских кошек характерны различные вариации колор-пойнтов, это могут быть отметины серо-голубые и темно-коричневые, рыжие и шоколадные, кремовые и лиловые. Палитра остальной шерсти может варьироваться от белого до кремового.</p>
+
+<p>Пигментация, как у сиамских кошек, допускается только на мордочке (так называемая «маска»), ушах, конечностях и хвосте. Еще одной приметой бирманцев являются белые лапы, «обутые» в «тапочки» (или «носочки») – штрих белого, без примесей, цвета на всех четырех конечностях.</p>
+
+<p>На лапках шерсть безупречного белого цвета и на передних ногах не поднимается выше пясти. На задних же ногах «тапочки» заканчиваются острой «шпорой». Она располагается на определенном расстоянии (1/2 или 1/3) между скакательными суставами и большой подушечкой лапы. Окрас подушечек тоже бывает разным, допускаются следующие вариации: розовые, темно-коричневые, кофе с молоком, розовые с темными пятнами, цвета корицы.</p>
+
+<p>Бирманские котята появляются на свет с безукоризненно белым окрасом. Отметины и «носочки» начинают проступать спустя 1-2 месяца. Окончательная расцветка устанавливается только у взрослых особей. С годами шерсть темнеет.</p>
+
+<h3>Возможные пороки</h3>
+
+<p>Цвет глаз, далёкий от принятого стандарта. Серебристый блеск в одном либо обоих глазах, косоглазие. Наличие на груди и животе белых или цветных пятен, а также голова, как у персов и сиамцев. Нестандартное строение хвоста.</p>
+
+<h3>Дисквалификационные пороки</h3>
+
+<p>Отсутствие белых «тапочек» («носочков»), «шпор» и «перчаток» и наличие вкраплений белого на цветных участках шерсти.</p>
+
+<p>Узловатость либо изогнутость хвоста. Превышение «шпорами» скакательного сустава.</p>
+
+<p>Пятна там, где их не должно быть: цветные – на светлой шерсти либо «перчатках», белые – на пойнтах. Цветные пятна на лапах.</p>
+
+
+<h2>Фото бирманских кошек</h2>
+<div class="img-two"><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/5f6/5f6262a3819ce1898f1f579d1f6c7497.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/5f6/380_264_2/5f6262a3819ce1898f1f579d1f6c7497.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/5f6/380_264_2/5f6262a3819ce1898f1f579d1f6c7497.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/5f6/380_264_2/5f6262a3819ce1898f1f579d1f6c7497.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/201/201a96ceb15d0ad26d2305cceb37fd5e.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/201/380_264_2/201a96ceb15d0ad26d2305cceb37fd5e.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/201/380_264_2/201a96ceb15d0ad26d2305cceb37fd5e.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/201/380_264_2/201a96ceb15d0ad26d2305cceb37fd5e.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/c0e/c0e934ce55a34a88b011393174db8063.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/c0e/380_264_2/c0e934ce55a34a88b011393174db8063.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/c0e/380_264_2/c0e934ce55a34a88b011393174db8063.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/c0e/380_264_2/c0e934ce55a34a88b011393174db8063.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div></div>
+<div class="img-two"><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/525/525466a00b0ea09a0e5e6bfab449b4c4.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/525/380_264_2/525466a00b0ea09a0e5e6bfab449b4c4.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/525/380_264_2/525466a00b0ea09a0e5e6bfab449b4c4.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/525/380_264_2/525466a00b0ea09a0e5e6bfab449b4c4.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/f11/f1130cce929635702db2b52fdc5e6d74.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/f11/380_264_2/f1130cce929635702db2b52fdc5e6d74.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/f11/380_264_2/f1130cce929635702db2b52fdc5e6d74.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/f11/380_264_2/f1130cce929635702db2b52fdc5e6d74.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/fa9/fa9ecb9ae240ca92452204ea4621ea83.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/fa9/380_264_2/fa9ecb9ae240ca92452204ea4621ea83.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/fa9/380_264_2/fa9ecb9ae240ca92452204ea4621ea83.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/fa9/380_264_2/fa9ecb9ae240ca92452204ea4621ea83.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div></div>
+<div class="img-two"><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/b97/b973c7f3877bbe52c8a58f4e3f839123.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/b97/380_264_2/b973c7f3877bbe52c8a58f4e3f839123.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/b97/380_264_2/b973c7f3877bbe52c8a58f4e3f839123.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/b97/380_264_2/b973c7f3877bbe52c8a58f4e3f839123.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/985/9851de8fdc620e7f6c2ac7eb8b0b7151.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/985/380_264_2/9851de8fdc620e7f6c2ac7eb8b0b7151.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/985/380_264_2/9851de8fdc620e7f6c2ac7eb8b0b7151.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/985/380_264_2/9851de8fdc620e7f6c2ac7eb8b0b7151.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/a4d/a4df12ff625728c36cb24891219bc7af.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/a4d/380_264_2/a4df12ff625728c36cb24891219bc7af.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/a4d/380_264_2/a4df12ff625728c36cb24891219bc7af.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/a4d/380_264_2/a4df12ff625728c36cb24891219bc7af.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div></div>
+
+<div id="bxdynamic_publ1_start" style="display:none"></div><div id="bxdynamic_publ1_end" style="display:none"></div>
+
+
+<h2 id='gl3'>Характер бирманских кошек</h2>
+
+<p>Эта грациозная азиатская красавица отличается необыкновенным умом и сообразительностью. Кажется, она понимает хозяина чуть ли не с полуслова. Когда кто-то разговаривает, бирманец внимательно смотрит в глаза, буквально вглядывается, словно понимает о чем речь и даже пытается уловить скрытый смысл. Буддистские монахи, заметившие в кошках этой породы такую особенность, прозвали их «оком небес».</p>
+
+<div class='img-right'><a data-fancybox="gallery" data-caption='Бирманский котенок с игрушками' href='/upload/iblock/f4f/f4ff79ac94b099722250efae6f53b576.jpg'  title="Бирманский котенок с игрушками" class="fancybox" ><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/f4f/412_2150_1/f4ff79ac94b099722250efae6f53b576.jpg' data-alt="Бирманский котенок с игрушками"><noscript  data-class="article_pic" data-original='/upload/resize_cache/iblock/f4f/412_2150_1/f4ff79ac94b099722250efae6f53b576.jpg' data-alt="Бирманский котенок с игрушками"><img     src='/upload/resize_cache/iblock/f4f/412_2150_1/f4ff79ac94b099722250efae6f53b576.jpg' width='412' height='274' alt="Бирманский котенок с игрушками"  class="article_pic   " /></noscript></div></a><div class='img_text'>Бирманский котенок с игрушками</div></div><p>Характер бирманских кошек, что называется, без крайностей. Излишняя пассивность за ними не наблюдается, но и слишком бурным темпераментом они тоже не обладают. Эти домашние любимцы отличаются спокойствием и уравновешенностью. Игривость, дружелюбие и ласковость – вот главные черты священной бирмы, за которые ее любят. Эти замечательные качества, как ни странно, в большей степени выражены в особях мужского пола, хотя, казалось бы, должно быть наоборот. Играя с хозяевами, интеллигентные бирманские кошки в пылу азарта никогда не поцарапают. Умение «держать себя в руках», как истинный признак благородной породы, у них явно в крови.</p>
+
+<p>Бирманская кошка не терпит одиночества и не дистанцируется от других животных в доме, она с легкостью уживается с кошками других пород и даже собаками. Но если хозяин чуть больше внимания будет оказывать другим домашним питомцам, бирманец может приревновать. Отлично ладят представители этой породы и с детьми, с удовольствием с ними играют. Если в доме вдруг накаляется атмосфера и назревает скандал, мудрая священная бирма каким-то непостижимым образом может разрядить обстановку, заставив домочадцев улыбнуться и забыть о ссорах.</p>
+
+<p>Вместе с тем представители этой породы обладают независимым характером, и независимость эта по мере взросления проявляется всё явственнее. Кажется, знаменитый писатель Редьярд Киплинг своего «Кота, который гулял сам по себе» списал именно с них. Если бирманец не хочет, в помещении его силой не удержишь. Он любит гулять на свежем воздухе, предаваться играм в саду или на приусадебном участке, выходить на улицу.</p>
+
+<div class='img-right'><a data-fancybox="gallery" data-caption='Этот кот может наблюдать за огнем часами' href='/upload/iblock/779/779481eec88634ce62cb8bf3f1787705.jpg'  title="Этот кот может наблюдать за огнем часами" class="fancybox" ><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/779/412_2150_1/779481eec88634ce62cb8bf3f1787705.jpg' data-alt="Этот кот может наблюдать за огнем часами"><noscript  data-class="article_pic" data-original='/upload/resize_cache/iblock/779/412_2150_1/779481eec88634ce62cb8bf3f1787705.jpg' data-alt="Этот кот может наблюдать за огнем часами"><img     src='/upload/resize_cache/iblock/779/412_2150_1/779481eec88634ce62cb8bf3f1787705.jpg' width='412' height='291' alt="Этот кот может наблюдать за огнем часами"  class="article_pic   " /></noscript></div></a><div class='img_text'>Этот кот может наблюдать за огнем часами</div></div><p>Несмотря на то, что ласковость, игривость и дружелюбие – обычное состояние бирманцев, им присущи частые смены настроения. Нередко проявляют такие черты, как излишнее любопытство, чрезмерную настойчивость и временами крайнюю навязчивость. Добиваясь поставленной цели любыми путями, бирманская кошка, бывает, сердит хозяев, которые, раздражившись, могут ее обидеть. В таких случаях бирманец тут же сменяет милость на гнев – проявляет агрессию. Если его обидеть очень сильно, то такого хозяина он может покинуть навсегда. Представители этой породы также не терпят безразличия к себе.</p>
+
+<p>Чтобы разнообразить «досуг» этих животных и чтобы они почувствовали, что хозяева к ним не безразличны и по-настоящему любят, нужно с раннего возраста создать им условия для полноценного развития. Было бы неплохо устроить для них своего рода «теремок», где они смогли бы играть и отдыхать. Бирманцев легко обучить простым командам, к определенному месту в доме и к когтеточке. К хозяину они привязываются крепко, однако длительную разлуку переносят безболезненно.</p>
+
+<p>Несмотря на такую черту, как навязчивость, бирманской кошке не чужда и тактичность. Если она почувствует, что хозяин не в настроении, лишний раз за порцией ласки подходить не будет, а дождется более подходящего момента.</p>
+
+<div class='img-w-center'><a data-fancybox="gallery" data-caption='Кто тут самый милый котик?' href='/upload/iblock/450/450ceece94823f05e4fd399880785f41.jpg' title="Кто тут самый милый котик?" class="fancybox"><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/450/1024_2150_1/450ceece94823f05e4fd399880785f41.jpg' data-alt="Кто тут самый милый котик?"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/450/1024_2150_1/450ceece94823f05e4fd399880785f41.jpg' data-alt="Кто тут самый милый котик?"><img src='/upload/resize_cache/iblock/450/1024_2150_1/450ceece94823f05e4fd399880785f41.jpg'     alt="Кто тут самый милый котик?"  class="article_pic   " /></noscript></div></a><div class='img_text'>Кто тут самый милый котик?</div></div>
+
+<h2 id='gl4'>Уход и содержание</h2>
+
+<div class='img-right'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/716/7161670871b7abdd253f065be9ad0ca6.jpg'  title="" class="fancybox" ><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/716/412_2150_1/7161670871b7abdd253f065be9ad0ca6.jpg' data-alt="Бирманская кошка"><noscript  data-class="article_pic" data-original='/upload/resize_cache/iblock/716/412_2150_1/7161670871b7abdd253f065be9ad0ca6.jpg' data-alt="Бирманская кошка"><img     src='/upload/resize_cache/iblock/716/412_2150_1/7161670871b7abdd253f065be9ad0ca6.jpg' width='412' height='617' alt="Бирманская кошка"  class="article_pic   " /></noscript></div></a></div><p>Мьянма – одна из самых жарких стран на нашей планете, поэтому неудивительно, что ее уроженка является животным очень теплолюбивым, не выносящим сквозняков. Мы привыкли, что обычные домашние кошки могут спать на коврике, в кресле, но только бирманская кошка предпочитает спать под одеялом. К жизни во дворе и на улице она совершенно не приспособлена, особенно в холодный период года. Не воспринимает священная бирма и осадки, она их откровенно боится.</p>
+
+<p>Характерные особенности этой породы проявляются и в строении вестибулярного аппарата – ее представители плохо приземляются. Поэтому если вы выпускаете кошку на балкон, обязательно поставьте на окно сетку, чтобы ваш любимец не свалился вниз, когда, подгоняемый природным любопытством, начнет исследовать всё вокруг.</p>
+
+<p>Шерсть бирманских кошек особенного ухода не требует. Подшерстка у них не имеется, поэтому вычесывание специальной щеткой достаточно проводить раз в две недели. Ежедневный уход за шерстью требуется разве что в период линьки – во избежание образования на ней колтунов. Несложных гигиенических процедур требуют и уши: их внутреннюю поверхность достаточно протирать влажным тампоном дважды в месяц.</p>
+
+<p>Купание бирманских кошек – это отдельная история. Водные процедуры они не любят, так что запаситесь терпением. Быстро и без особых нервов купание проходит, только если бирма приучена к этому с раннего возраста.</p>
+
+<h2 id='gl5'>Кормление</h2>
+
+<p>Рацион бирманских кошек должен быть сбалансированным. К пищевой «наркомании», в отличие от многих людей, они не склонны. Сколько бы вы корма бирме ни оставили, она съест ровно столько, сколько нужно, не переедая. К тому же, помимо природной активности, у них хороший обмен веществ, так что избыточный вес им не грозит ни в раннем возрасте, ни во взрослой жизни.</p>
+
+<div class='img-right'><a data-fancybox="gallery" data-caption='Ням-ням' href='/upload/iblock/b23/b2378fd6f8ca1a852c1854863f82ff26.jpg'  title="Ням-ням" class="fancybox" ><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/b23/412_2150_1/b2378fd6f8ca1a852c1854863f82ff26.jpg' data-alt="Ням-ням"><noscript  data-class="article_pic" data-original='/upload/resize_cache/iblock/b23/412_2150_1/b2378fd6f8ca1a852c1854863f82ff26.jpg' data-alt="Ням-ням"><img     src='/upload/resize_cache/iblock/b23/412_2150_1/b2378fd6f8ca1a852c1854863f82ff26.jpg' width='412' height='412' alt="Ням-ням"  class="article_pic   " /></noscript></div></a><div class='img_text'>Ням-ням</div></div><p>При этом наша индокитайская аристократка является настоящей гурманкой, то есть любит вкусно поесть. Для неё имеет значение не количество еды, а качество. Натуральная мясная пища – главный приоритет в ее меню. Если вы будете потчевать своего домашнего любимца индейкой, говядиной или курицей, он будет вам премного благодарен и станет отвечать ещё большей любовью. Некоторые особи с удовольствием едят отварную рыбу. А вот жирное мясо и пищу с содержанием соли из рациона этих кошек следует исключить, так как это чревато для их здоровья: могут пострадать почки и печень.</p>
+
+<p>Многие из нас привыкли кормить домашних животных продуктами и блюдами «со стола», то есть обычной повседневной пищей, которой питается вся семья. Священной бирме давать такую еду нельзя! Не должна попадать в ее рацион также острая и копченая пища. Готовый корм добавлять в меню можно, но только если это будет продукт высшего качества. Дешевый корм вашего питомца, конечно, не убьёт, зато может отрицательно сказаться на состоянии его шерсти и кожи, а также пищеварительного тракта.</p>
+
+<p>В рацион маленьких котят следует включать нежирный куриный и говяжий фарш, кисломолочные продукты. Такое меню станет залогом сохранения яркости шерсти во взрослом возрасте. Малышей, чтобы они полноценно развивались, нужно кормить 4-5 раз в день, размер порции не должен превышать 150 грамм. Кисломолочные продукты следует давать и взрослым котам, что благоприятно для их здоровья. Пожилых и старых кошек обычно кормят дважды в день, разовая порция должна составлять 200-250 грамм.</p>
+
+<div class="img-two"><div class='img-two-block'><a data-fancybox="gallery" data-caption='Наводим лоск' href='/upload/iblock/2b9/2b94c41249e4979b8d13079debbdf035.jpg'  title="Наводим лоск" class="fancybox"><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/2b9/512_342_2/2b94c41249e4979b8d13079debbdf035.jpg' data-alt="Наводим лоск"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/2b9/512_342_2/2b94c41249e4979b8d13079debbdf035.jpg' data-alt="Наводим лоск"><img src='/upload/resize_cache/iblock/2b9/512_342_2/2b94c41249e4979b8d13079debbdf035.jpg'  alt="Наводим лоск"  class="article_pic   " /></noscript></div></a><div class='img_text'>Наводим лоск</div></div><div class='img-two-block'><a data-fancybox="gallery" data-caption='Суровый бирманский кот' href='/upload/iblock/72f/72f3a3aefcece8f352a90a672d439ff7.jpg'  title="Суровый бирманский кот" class="fancybox"><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/72f/512_342_2/72f3a3aefcece8f352a90a672d439ff7.jpg' data-alt="Суровый бирманский кот"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/72f/512_342_2/72f3a3aefcece8f352a90a672d439ff7.jpg' data-alt="Суровый бирманский кот"><img src='/upload/resize_cache/iblock/72f/512_342_2/72f3a3aefcece8f352a90a672d439ff7.jpg'  alt="Суровый бирманский кот"  class="article_pic   " /></noscript></div></a><div class='img_text'>Суровый бирманский кот</div></div></div>
+
+<h2 id='gl6'>Здоровье и болезни бирманской кошки</h2>
+
+<p>Заболевания наследственного и генетического характера у представителей этой породы встречаются редко, и всё благодаря тщательной селекции. В целом, здоровье бирманских кошек достаточно крепкое. Взяв за правило регулярно посещать ветеринара для профилактических осмотров и плановых прививок, вы тем самым гарантируете своему питомцу активную жизнь и долголетие.</p>
+
+<div class='img-right'><a data-fancybox="gallery" data-caption='Милый котенок бирманской кошки' href='/upload/iblock/d9a/d9afdf022dfd693bf036e328e5df68c2.jpg'  title="Милый котенок бирманской кошки" class="fancybox" ><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/d9a/412_2150_1/d9afdf022dfd693bf036e328e5df68c2.jpg' data-alt="Милый котенок бирманской кошки"><noscript  data-class="article_pic" data-original='/upload/resize_cache/iblock/d9a/412_2150_1/d9afdf022dfd693bf036e328e5df68c2.jpg' data-alt="Милый котенок бирманской кошки"><img     src='/upload/resize_cache/iblock/d9a/412_2150_1/d9afdf022dfd693bf036e328e5df68c2.jpg' width='412' height='617' alt="Милый котенок бирманской кошки"  class="article_pic   " /></noscript></div></a><div class='img_text'>Милый котенок бирманской кошки</div></div><p>Продолжительность жизни бирмы составляет от 12 до 14 лет. Из этого правила случаются счастливые исключения – например, кошка Леди Каталина. Эта представительница бирманской породы из австралийского Мельбурна родилась 11 марта 1977 года и прожила 35 лет, попав, благодаря своему рекорду долголетия, в Книгу Гиннесса. Бирманские кошки отличаются и плодовитостью, количество котят в одном помете может достигать 10. Задокументирован факт, когда кошка дала жизнь сразу 19 малышам, и это тоже рекорд.</p>
+
+<p>В некоторых случаях, очень редких, бирманцы страдают от такого недуга сердца, как гипертрофическая кардиомиопатия. Ее симптомы – одышка и кашель после активных игр, вялость – начинают проявляться обычно с раннего возраста. У бирманских кошек встречаются также патологии вестибулярного аппарата и корнеальные дермоиды. Последние успешно лечатся курсом специальных антибиотиков, но при условии, что болезнь не запущена. В качестве профилактических мер предусмотрены регулярная дегельминтизация и прививки по возрасту.</p>
+
+<p>Чтобы кошка стачивала когти, ее необходимо приучать к когтеточке. Домик или лежанку для своего любимца старайтесь располагать невысоко, так как лазанье чуть ли не до потолка – это не стиль священной бирмы, она животное степенное. Лежанку следует изготавливать из натуральных материалов, любая «химия» может негативно сказаться на здоровье бирманца.</p>
+
+<h2 id='gl7'>Как выбрать котенка</h2>
+
+<p>При покупке котёнка бирманской, да и любой другой породы, хочется быть уверенным в его породности и здоровье. Приобретение с рук или в интернет-магазинах гарантировать этого не может. Самый надежный способ не ошибиться – купить котёнка в сертифицированном питомнике. Владельцы подобных заведений, как правило, дорожат своей репутацией, уделяя особое внимание здоровью котят, их воспитанию и социальной адаптации. Здесь вашего будущего питомца привьют от инфекционных заболеваний и проглистогонят. Покидая питомник, котята придут в ваш дом уже адаптированными, общительными, приученными к лотку и когтеточке.</p>
+
+<p>Многие на свой страх и риск всё же покупают котят бирманской породы не в сертифицированных питомниках или вовсе с рук. В таком случае, внимательно осмотрите котёнка. Малыш, у которого нет проблем со здоровьем, обычно весел и активен, у него ясные глазки, чистые ушки и блестящая густая шерсть. Поинтересуйтесь, прививался ли котёнок, имеется ли у него ветеринарный паспорт, чем малыша кормили.</p>
+
+<p>Если заметите выделения из носа или глаз, то такого котенка лучше не покупать – себе дороже.</p>
+
+
+
+<h2>Фото бирманских котят</h2>
+<div class="img-two"><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/23c/23c6c978a74375467868b0560bb7c8f9.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/23c/380_264_2/23c6c978a74375467868b0560bb7c8f9.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/23c/380_264_2/23c6c978a74375467868b0560bb7c8f9.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/23c/380_264_2/23c6c978a74375467868b0560bb7c8f9.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/b09/b09bdab18380fc4fa63e88a46b51b23a.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/b09/380_264_2/b09bdab18380fc4fa63e88a46b51b23a.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/b09/380_264_2/b09bdab18380fc4fa63e88a46b51b23a.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/b09/380_264_2/b09bdab18380fc4fa63e88a46b51b23a.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/08c/08c1ed148f237bc996d1fc1714138303.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/08c/380_264_2/08c1ed148f237bc996d1fc1714138303.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/08c/380_264_2/08c1ed148f237bc996d1fc1714138303.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/08c/380_264_2/08c1ed148f237bc996d1fc1714138303.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div></div>
+<div class="img-two"><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/8ac/8ac26ea0dc5467b5b12037bbfeb64c1a.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/8ac/380_264_2/8ac26ea0dc5467b5b12037bbfeb64c1a.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/8ac/380_264_2/8ac26ea0dc5467b5b12037bbfeb64c1a.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/8ac/380_264_2/8ac26ea0dc5467b5b12037bbfeb64c1a.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/d03/d030697873a95fa18fce6040d328f224.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/d03/380_264_2/d030697873a95fa18fce6040d328f224.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/d03/380_264_2/d030697873a95fa18fce6040d328f224.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/d03/380_264_2/d030697873a95fa18fce6040d328f224.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/93c/93c0b74e4d9c1806672cf6d270e26d27.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/93c/380_264_2/93c0b74e4d9c1806672cf6d270e26d27.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/93c/380_264_2/93c0b74e4d9c1806672cf6d270e26d27.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/93c/380_264_2/93c0b74e4d9c1806672cf6d270e26d27.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div></div>
+<div class="img-two"><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/1c5/1c5b6d27ceb1db72b9580e50d7171f1e.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/1c5/380_264_2/1c5b6d27ceb1db72b9580e50d7171f1e.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/1c5/380_264_2/1c5b6d27ceb1db72b9580e50d7171f1e.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/1c5/380_264_2/1c5b6d27ceb1db72b9580e50d7171f1e.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/626/626a0db9c195c681b19329c7faf9198b.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/626/380_264_2/626a0db9c195c681b19329c7faf9198b.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/626/380_264_2/626a0db9c195c681b19329c7faf9198b.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/626/380_264_2/626a0db9c195c681b19329c7faf9198b.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div><div class='img-three-block'><a data-fancybox="gallery" data-caption='' href='/upload/iblock/053/0538cea760547acce9a7fd98dc9eb542.jpg'  title="" class="fancybox "><div class="lazy-load"  data-class="article_pic" data-original='/upload/resize_cache/iblock/053/380_264_2/0538cea760547acce9a7fd98dc9eb542.jpg' data-alt="Бирманская кошка"><noscript data-class="article_pic" data-original='/upload/resize_cache/iblock/053/380_264_2/0538cea760547acce9a7fd98dc9eb542.jpg' data-alt="Бирманская кошка"><img  src='/upload/resize_cache/iblock/053/380_264_2/0538cea760547acce9a7fd98dc9eb542.jpg'  alt="Бирманская кошка"  class="article_pic" /></noscript></div></a></div></div>
+
+
+<h2 id='gl8'>Сколько стоит бирманская кошка</h2>
+
+<p>Питомники, специализация которых – разведение бирманских кошек, в России большая редкость. Покупка чистокровных котят может вылиться в круглую сумму. Так, особь шоу-класса обойдется вашему кошельку примерно в 70 тыс. рублей. Брид-класс дешевле, около 60 тысяч. Ещё дешевле, примерно 50 тысяч рублей, будет стоить котёнок пэт-класса. Котенка бирманской породы без сопроводительных документов можно приобрести всего за 10 тыс. руб. Такие животные обычно появляются на свет от внеплановых вязок и, соответственно, будут без родословной.</p>
+
+<p>Не рекомендуется приобретать котят на птичьих рынках, через сомнительные объявления или с рук у случайных лиц. Высока вероятность, что у такого бирманца окажется плохая наследственность, и он будет с целым букетом заболеваний. Многие ценители породы, чтобы сэкономить, идут на такие риски. Чтобы минимизировать их, при покупке обращайте внимание на общее состояние будущего питомца. Котёнок должен быть крепеньким, не вялым, с густой блестящей шерстью, без гнойных выделений из глаз и ушек.</p>
+
+<p>Когда все сомнения останутся позади, и вы решитесь на покупку, которая в конечном итоге окажется удачной, будьте уверены: отныне рядом с вами – верный друг на долгие годы. Представители породы бирманская кошка – существа очень благородные, которые на внимание и заботу неизменно отвечают огромной любовью и преданностью.</p> </div>
+		
+</div>
+
+<div class="publ-share shb" data-share-data='{"url": "https://lapkins.ru/cat/birmanskaya-koshka/", "img": "https://lapkins.ru/upload/iblock/e54/e54c0e4bd5d9d52f19967c7fdc05e1ef.jpg", "title": "Бирманская кошка – все о породе от А до Я", "text": "Бирманские кошки отличаются отменным здоровьем и дружелюбным нравом, обладают тихим и мелодичным голосом. Представители этой породы не доставляют хозяевам особых хлопот.
+"}'>
+<span class="all-share"></span>
+<span class="sharea vk-share vk" onclick="share.vk($(this))"><span>вконтакте</span></span>
+<span class="sharea fb-share fb" onclick="share.facebook($(this))"><span>facebook</span></span>
+<span class="sharea tw-share tw" onclick="share.twitter($(this))"><span>twitter</span></span>
+</div>
+
+<!--Начало -->
+
+<div id="bxdynamic_Zg1Ab0_start" style="display:none"></div><div id="bxdynamic_Zg1Ab0_end" style="display:none"></div>
+
+<div class="forum-inside">
+	<h2 class="dr-h2">Обсуждения бирманской кошки на форуме</h2>
+			<div class="forum-prew">
+		<div class="forum-ava-block">
+			<a href="/u/6476/">
+				<div class="ava-med">
+											<div class="noava fill6"></div>
+									</div>
+			</a>
+		</div>
+		<div class="forum-text-block">
+			<div class="forum-href"><a href="/f/problemy-so-stulom-3455/" class="fh">Проблемы со стулом </a></div>
+			<div class="forum-text">У нас кот Бирманской породы, 1.5 года. У него проблемы со стулом. Чтобы он сходил, приходится выбегивать его по коридору около часа, не всегда сразу и после этого получается. И стул сухой. Вода всегда доступна...</div>
+			<span class="vopros-stat">
+<span class="ava-med-name"><a href="/u/6476/" class="fha">Ольга Суховская</a></span>
+				<span class="vopros-date">5 месяцев назад</span>
+				<span class="vopros-smotr">57 просмотров</span>
+				<span class="vopros-otvet">0 ответов</span>
+			</span>
+		</div>
+	</div>
+		<div class="forum-prew">
+		<div class="forum-ava-block">
+			<a href="/u/3469/">
+				<div class="ava-med">
+											<div class="noava fill9"></div>
+									</div>
+			</a>
+		</div>
+		<div class="forum-text-block">
+			<div class="forum-href"><a href="/f/u-koshechki-stress-2142/" class="fh">У кошечки стресс</a></div>
+			<div class="forum-text">Здравствуйте подскажите пожалуйста что делать, завели кошечку мейн кун ей 6 месяцев, пока везли домой сидела на руках мурчала, все было хорошо, дома спряталась за журнальный столик и шипит на всех, думаю что у неё...</div>
+			<span class="vopros-stat">
+<span class="ava-med-name"><a href="/u/3469/" class="fha">ОЛЬГА варисина</a></span>
+				<span class="vopros-date">2 года назад</span>
+				<span class="vopros-smotr">776 просмотров</span>
+				<span class="vopros-otvet">1 ответ</span>
+			</span>
+		</div>
+	</div>
+		<div class="forum-prew">
+		<div class="forum-ava-block">
+			<a href="/u/390/">
+				<div class="ava-med">
+											
+						
+<div class="lazy-load" data-original='/upload/resize_cache/main/e2f/200_200_2/e2fae31acee209f59b62ee0b06f3fd4b.jpg' data-alt="Екатерина Мякова">
+<noscript data-original='/upload/resize_cache/main/e2f/200_200_2/e2fae31acee209f59b62ee0b06f3fd4b.jpg' data-alt="Екатерина Мякова">
+<img src='/upload/resize_cache/main/e2f/200_200_2/e2fae31acee209f59b62ee0b06f3fd4b.jpg' alt="Екатерина Мякова">
+</noscript>
+</div>
+						
+									</div>
+			</a>
+		</div>
+		<div class="forum-text-block">
+			<div class="forum-href"><a href="/f/okrasy-birmanskoy-koshki-255/" class="fh">Окрасы бирманской кошки</a></div>
+			<div class="forum-text">Собираемся завести котенка понравившейся нам бирманской кошки. Думали, что они отличаются темными ушками и маской на мордочке, но в объявлениях таких котят нет, в основном они все белые. Какие окрасы имеют кошки...</div>
+			<span class="vopros-stat">
+<span class="ava-med-name"><a href="/u/390/" class="fha">Екатерина Мякова</a></span>
+				<span class="vopros-date">5 лет назад</span>
+				<span class="vopros-smotr">1470 просмотров</span>
+				<span class="vopros-otvet">3 ответа</span>
+			</span>
+		</div>
+	</div>
+		<div class="forum-prew">
+		<div class="forum-ava-block">
+			<a href="/u/74/">
+				<div class="ava-med">
+											
+						
+<div class="lazy-load" data-original='/upload/resize_cache/main/52d/200_200_2/52d6d28d81d63fb956ca757a9917b9eb.jpg' data-alt="Женя Федотова">
+<noscript data-original='/upload/resize_cache/main/52d/200_200_2/52d6d28d81d63fb956ca757a9917b9eb.jpg' data-alt="Женя Федотова">
+<img src='/upload/resize_cache/main/52d/200_200_2/52d6d28d81d63fb956ca757a9917b9eb.jpg' alt="Женя Федотова">
+</noscript>
+</div>
+						
+									</div>
+			</a>
+		</div>
+		<div class="forum-text-block">
+			<div class="forum-href"><a href="/f/koshka-stala-gadit-v-nepolozhennom-meste-70/" class="fh">Кошка стала гадить в неположенном месте</a></div>
+			<div class="forum-text">Нашей красавице год, неделю назад была течка, орала дурниной, после все прошло. Позавчера все началось по новой, мяукает до мурашек по коже и стала гадить, первый раз на мою сумку, второй раз мужу на подушку...</div>
+			<span class="vopros-stat">
+<span class="ava-med-name"><a href="/u/74/" class="fha">Женя Федотова</a></span>
+				<span class="vopros-date">5 лет назад</span>
+				<span class="vopros-smotr">1605 просмотров</span>
+				<span class="vopros-otvet">6 ответов</span>
+			</span>
+		</div>
+	</div>
+			<a href="/cat/birmanskaya-koshka/forum/" class="big-button">Перейти на форум бирманской кошки</a>
+</div>
+
+<!--Конец -->
+<div class="pet-bot">
+	<div class="pet-ava ava-bot"><img src="/upload/iblock/326/32690cdbc3072d6207f63c8d65029133.jpg" alt="Бирманская кошка"></div>
+	<nav class="pet-prew-bot">
+		<p class="bot-p"><a href="/cat/birmanskaya-koshka/" class="bot-a">Бирманская кошка</a> <span class="nowrap">на <span class="logo lapka logo-bot"><span>lapkins.ru</span></span></span></p>
+		<a href="/cat/birmanskaya-koshka/" class="also-href">Описание</a>
+		<a href="/cat/birmanskaya-koshka/forum/" class="also-href">Обсуждения</a>
+		<a href="/cat/birmanskaya-koshka/otzivi/" class="also-href">Отзывы</a>
+		<a href="/cat/birmanskaya-koshka/photo/" class="also-href">Фотографии</a>
+                <a href="/cat/birmanskaya-koshka/pitomniki/" class="also-href">Питомники</a>
+
+    </nav>
+</div>
+
+<div class="pop-porodi-block">
+
+    <h2 class="dr-h2">Случайные породы кошек</h2>
+    
+        <a href="/cat/sibirskaya-koshka/" class="poroda-element ">
+            <div class="ava-poroda">
+			
+<div class="lazy-load" data-original='/upload/resize_cache/iblock/4d1/100_100_1/4d156c3a13ec27bf1dfc055964a80ecd.jpg' data-alt="Сибирская кошка">
+<noscript data-original='/upload/resize_cache/iblock/4d1/100_100_1/4d156c3a13ec27bf1dfc055964a80ecd.jpg' data-alt="Сибирская кошка">
+<img src='/upload/resize_cache/iblock/4d1/100_100_1/4d156c3a13ec27bf1dfc055964a80ecd.jpg' alt="Сибирская кошка">
+</noscript>
+</div>
+			
+			</div>
+            <span>Сибирская кошка</span>
+        </a>
+        
+        <a href="/cat/nevskaya-maskaradnaya-koshka/" class="poroda-element ">
+            <div class="ava-poroda">
+			
+<div class="lazy-load" data-original='/upload/resize_cache/iblock/d6a/100_100_1/d6a28fb3bd0e0047eb3ca5e0a5a97691.jpg' data-alt="Невская маскарадная кошка">
+<noscript data-original='/upload/resize_cache/iblock/d6a/100_100_1/d6a28fb3bd0e0047eb3ca5e0a5a97691.jpg' data-alt="Невская маскарадная кошка">
+<img src='/upload/resize_cache/iblock/d6a/100_100_1/d6a28fb3bd0e0047eb3ca5e0a5a97691.jpg' alt="Невская маскарадная кошка">
+</noscript>
+</div>
+			
+			</div>
+            <span>Невская маскарадная кошка</span>
+        </a>
+        
+        <a href="/cat/nemetskiy-reks/" class="poroda-element ">
+            <div class="ava-poroda">
+			
+<div class="lazy-load" data-original='/upload/resize_cache/iblock/afa/100_100_1/afa63c88d6753ec1dc7fade585881fc6.jpg' data-alt="Немецкий рекс">
+<noscript data-original='/upload/resize_cache/iblock/afa/100_100_1/afa63c88d6753ec1dc7fade585881fc6.jpg' data-alt="Немецкий рекс">
+<img src='/upload/resize_cache/iblock/afa/100_100_1/afa63c88d6753ec1dc7fade585881fc6.jpg' alt="Немецкий рекс">
+</noscript>
+</div>
+			
+			</div>
+            <span>Немецкий рекс</span>
+        </a>
+        
+        <a href="/cat/menks/" class="poroda-element pe4">
+            <div class="ava-poroda">
+			
+<div class="lazy-load" data-original='/upload/resize_cache/iblock/72b/100_100_1/72b5b7f9a5f844c234f1767ae7f71cb3.jpg' data-alt="Мэнкс">
+<noscript data-original='/upload/resize_cache/iblock/72b/100_100_1/72b5b7f9a5f844c234f1767ae7f71cb3.jpg' data-alt="Мэнкс">
+<img src='/upload/resize_cache/iblock/72b/100_100_1/72b5b7f9a5f844c234f1767ae7f71cb3.jpg' alt="Мэнкс">
+</noscript>
+</div>
+			
+			</div>
+            <span>Мэнкс</span>
+        </a>
+        </div>
+
+</div><!--.r-side-->
+</div><!--.content-->
+<div id="bxdynamic_footerad_start" style="display:none"></div><div id="bxdynamic_footerad_end" style="display:none"></div>
+
+    <div id="bxdynamic_vhh5NV_start" style="display:none"></div><div id="bxdynamic_vhh5NV_end" style="display:none"></div>
+    <!--<div id="yandex_rtb_R-A-604547-20"></div>
+    -->
+
+    <!-- Yandex.RTB -->
+            <!-- Yandex.RTB R-A-604547-77 -->
+    <footer>
+    <div class="fl fl1">
+        <div class="flz">Добавьте мимимишности к себе в ленту. Подписывайтесь на нас:</div>
+        <a href="https://vk.com/lapkins_ru" class="vk socicon" rel="nofollow" target="_blank"></a>
+        <a href="https://www.facebook.com/lapkins.ru/" class="fb socicon" rel="nofollow" target="_blank"></a>
+        <a href="https://www.instagram.com/lapkins.ru/" class="inst socicon" rel="nofollow" target="_blank"><i
+                    class="inst-ico"></i></a>
+    </div>
+    <div class="fl fl2">
+        <a href="/">Главная</a>
+        <a href="/dog/">Собаки</a>
+        <a href="/cat/">Кошки</a>
+        <a href="/publ/">Журнал</a>
+        <!--<a href="#">Объявления</a>-->
+        <a href="/forum/">Форум</a>
+        <a href="/klichki/">Клички</a>
+    </div>
+    <div class="fl fl3">
+        <a href="/o-proekte/">О проекте</a>
+        <!--<a href="#">Команда</a>-->
+        <!--<a href="#">Реклама</a>-->
+        <a href="/os/">Обратная связь</a>
+        <a href="/terms/">Правила</a>
+        <!--<a href="#">Вакансии</a>-->
+    </div>
+    <div class="fl fl4">2023 © «Lapkins.ru». Сделано с <i class="love"></i> к животным. Копирование материалов
+        запрещено.<span class="c-c">
+<script data-skip-moving=true>document.write("<a href='//www.liveinternet.ru/click' " + "target=_blank><img src='//counter.yadro.ru/hit?q;t50.1;r" + escape(document.referrer) + ((typeof (screen) == "undefined2") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";h" + escape(document.title.substring(0, 150)) + ";" + Math.random() + "' alt='' title='LiveInternet' " + "border='0' width='31' height='31'><\/a>")</script>
+</span>
+        <span id="bx-composite-banner"></span></div>
+</footer>
+
+</div>
+<div class="top"></div>
+</div>
+
+<header>
+    <a href="/" class="logo lapka"><span class="logotxt">lapkins</span></a>
+    <nav class="topmenu">
+        <div class="iconmenu"><span></span></div>
+        <div class="itemsmenu">
+            <a href="/dog/">Собаки</a>
+            <a href="/cat/">Кошки</a>
+            <a href="/publ/">Журнал</a>
+            <a href="/forum/">Форум</a>
+        </div>
+        <div class="find find_btn__open">
+            <i class="find-toggle"></i>
+        </div>
+    </nav>
+
+                <div class="login no-login" id="auth_enter"></div>
+    
+</header>
+<div class="poisk-fon" style="display: none">
+    <div class="poisk-head">
+
+        <div class="find-stroka">
+            <form method="get" action="/poisk/">
+            <input type="text" placeholder="Поиск по сайту" name="text" value="" autocomplete="off" class="find-okno">
+                <input type="hidden" name="searchid" value="2854646"/>
+                <input type="hidden" name="l10n" value="ru"/>
+                <input type="hidden" name="reqenc" value=""/>
+            </form>
+        </div>
+        <span class="close"></span>
+    </div>
+    <div class="poisk-content" >
+
+    </div>
+
+</div>    <div id="socservices" style="display: none">
+        <div id="bxdynamic_yn3v0T_start" style="display:none"></div><div class="bx-authform-social">
+	<ul>
+		<li>
+			<a id="bx_socserv_icon_MailRu2" class="mailru2 bx-authform-social-icon" href="javascript:void(0)" onclick="BX.util.popup('https://oauth.mail.ru/login?client_id=60ca29c8d06b445dbee8ad18f8b8504c&amp;redirect_uri=https%3A%2F%2Flapkins.ru%2Fbitrix%2Ftools%2Foauth%2Fmailru2.php&amp;scope=userinfo&amp;response_type=code&amp;state=site_id%3Ds1%26backurl%3D%252Fcat%252Fbirmanskaya-koshka%252F%253Fcheck_key%253Dac75682ba4a06ea0e5af58cc0cbecc1e%2526ANIMAL_CODE%253Dbirmanskaya-koshka%2526SECTION_CODE%253Dcat%2526puti%253D1%26redirect_url%3D%252Fcat%252Fbirmanskaya-koshka%252F&amp;prompt_force=1', 460, 420)" title="Mail.Ru"></a>
+			</li>
+		<li>
+			<a id="bx_socserv_icon_VKontakte" class="vkontakte bx-authform-social-icon" href="javascript:void(0)" onclick="BX.util.popup('https://oauth.vk.com/authorize?client_id=6685710&amp;redirect_uri=https%3A%2F%2Flapkins.ru%2Fbitrix%2Ftools%2Foauth%2Fvkontakte.php&amp;scope=friends,offline,email&amp;response_type=code&amp;state=c2l0ZV9pZD1zMSZiYWNrdXJsPSUyRmNhdCUyRmJpcm1hbnNrYXlhLWtvc2hrYSUyRiUzRmNoZWNrX2tleSUzRGFjNzU2ODJiYTRhMDZlYTBlNWFmNThjYzBjYmVjYzFlJTI2QU5JTUFMX0NPREUlM0RiaXJtYW5za2F5YS1rb3Noa2ElMjZTRUNUSU9OX0NPREUlM0RjYXQlMjZwdXRpJTNEMSZyZWRpcmVjdF91cmw9JTJGY2F0JTJGYmlybWFuc2theWEta29zaGthJTJG', 660, 425)" title="ВКонтакте"></a>
+			</li>
+		<li>
+			<a id="bx_socserv_icon_YandexOAuth" class="yandex bx-authform-social-icon" href="javascript:void(0)" onclick="BX.util.popup('https://oauth.yandex.ru/authorize?response_type=code&amp;client_id=ac1483f5146e4b60bec2444ba3a33b4f&amp;display=popup&amp;redirect_uri=https%3A%2F%2Flapkins.ru%2Fbitrix%2Ftools%2Foauth%2Fyandex.php&amp;force_confirm=yes&amp;state=site_id%3Ds1%26backurl%3D%252Fcat%252Fbirmanskaya-koshka%252F%253Fcheck_key%253Dac75682ba4a06ea0e5af58cc0cbecc1e%2526ANIMAL_CODE%253Dbirmanskaya-koshka%2526SECTION_CODE%253Dcat%2526puti%253D1%26mode%3Dopener%26redirect_url%3D%252Fcat%252Fbirmanskaya-koshka%252F', 680, 600)" title="Яндекс"></a>
+			</li>
+		<li>
+			<a id="bx_socserv_icon_Odnoklassniki" class="odnoklassniki bx-authform-social-icon" href="javascript:void(0)" onclick="BX.util.popup('http://www.odnoklassniki.ru/oauth/authorize?client_id=512000516860&amp;redirect_uri=https%3A%2F%2Flapkins.ru%2Fbitrix%2Ftools%2Foauth%2Fodnoklassniki.php&amp;response_type=code&amp;state=site_id%3Ds1%26backurl%3D%252Fcat%252Fbirmanskaya-koshka%252F%253Fcheck_key%253Dac75682ba4a06ea0e5af58cc0cbecc1e%2526ANIMAL_CODE%253Dbirmanskaya-koshka%2526SECTION_CODE%253Dcat%2526puti%253D1%26redirect_url%3D%252Fcat%252Fbirmanskaya-koshka%252F%26mode%3Dopener', 580, 400)" title="Одноклассники"></a>
+			</li>
+	</ul>
+</div>
+<div id="bxdynamic_yn3v0T_end" style="display:none"></div>    </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="/js/my.js"></script>
+<script src="//s1.lapkins.ru/jquery.fancybox.min.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push ({
+google_ad_client: "ca-pub-6109638387739871",
+enable_page_level_ads: true,
+overlays: {bottom: true}
+});
+</script>
+
+<script src="/bitrix/js/main/core/core.min.js?1656570566216224"></script><script>BX.setJSList(['/bitrix/js/main/core/core_ajax.js','/bitrix/js/main/core/core_promise.js','/bitrix/js/main/polyfill/promise/js/promise.js','/bitrix/js/main/loadext/loadext.js','/bitrix/js/main/loadext/extension.js','/bitrix/js/main/polyfill/promise/js/promise.js','/bitrix/js/main/polyfill/find/js/find.js','/bitrix/js/main/polyfill/includes/js/includes.js','/bitrix/js/main/polyfill/matches/js/matches.js','/bitrix/js/ui/polyfill/closest/js/closest.js','/bitrix/js/main/polyfill/fill/main.polyfill.fill.js','/bitrix/js/main/polyfill/find/js/find.js','/bitrix/js/main/polyfill/matches/js/matches.js','/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','/bitrix/js/main/core/core.js','/bitrix/js/main/polyfill/intersectionobserver/js/intersectionobserver.js','/bitrix/js/main/lazyload/dist/lazyload.bundle.js','/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','/bitrix/js/main/parambag/dist/parambag.bundle.js']);
+BX.setCSSList(['/bitrix/js/main/lazyload/dist/lazyload.bundle.css','/bitrix/js/main/parambag/dist/parambag.bundle.css']);</script>
+
+<script  src="/bitrix/cache/js/s1/lapkins/kernel_main/kernel_main_v1.js?1656574111224495"></script>
+<script  src="/bitrix/cache/js/s1/lapkins/kernel_main_polyfill_customevent/kernel_main_polyfill_customevent_v1.js?16565706281051"></script>
+<script src="/bitrix/js/ui/dexie/dist/dexie.bitrix.bundle.min.js?165589894560992"></script>
+<script src="/bitrix/js/main/core/core_ls.min.js?14888980827365"></script>
+<script src="/bitrix/js/main/core/core_frame_cache.min.js?165657056611264"></script>
+<script src="/bitrix/js/pull/protobuf/protobuf.min.js?161780489276433"></script>
+<script src="/bitrix/js/pull/protobuf/model.min.js?161780489214190"></script>
+<script src="/bitrix/js/rest/client/rest.client.min.js?16178107549240"></script>
+<script src="/bitrix/js/pull/client/pull.client.min.js?165589892644545"></script>
+<script src="/bitrix/js/main/popup/dist/main.popup.bundle.min.js?165657056663284"></script>
+
+<script>
+					(function () {
+						"use strict";
+
+						var counter = function ()
+						{
+							var cookie = (function (name) {
+								var parts = ("; " + document.cookie).split("; " + name + "=");
+								if (parts.length == 2) {
+									try {return JSON.parse(decodeURIComponent(parts.pop().split(";").shift()));}
+									catch (e) {}
+								}
+							})("BITRIX_CONVERSION_CONTEXT_s1");
+
+							if (cookie && cookie.EXPIRE >= BX.message("SERVER_TIME"))
+								return;
+
+							var request = new XMLHttpRequest();
+							request.open("POST", "/bitrix/tools/conversion/ajax_counter.php", true);
+							request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+							request.send(
+								"SITE_ID="+encodeURIComponent("s1")+
+								"&sessid="+encodeURIComponent(BX.bitrix_sessid())+
+								"&HTTP_REFERER="+encodeURIComponent(document.referrer)
+							);
+						};
+
+						if (window.frameRequestStart === true)
+							BX.addCustomEvent("onFrameDataReceived", counter);
+						else
+							BX.ready(counter);
+					})();
+				</script>
+
+<script>var _ba = _ba || []; _ba.push(["aid", "de5f6931e753adf56546003daa1cae62"]); _ba.push(["host", "lapkins.ru"]); (function() {var ba = document.createElement("script"); ba.type = "text/javascript"; ba.async = true;ba.src = (document.location.protocol == "https:" ? "https://" : "http://") + "bitrix.info/ba.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ba, s);})();</script>
+
+<script async="" src="https://ad.mail.ru/static/ads-async.js"></script>
+<script>
+        window.yaContextCb = window.yaContextCb || []
+        document.addEventListener('DOMContentLoaded', function(){
+            let storage = localStorage;
+            let dataFlag = storage.getItem('visitFlag')
+            let dataFlagTime = storage.getItem('visitTimer');
+            let deltaTimer = 0;
+
+            if(dataFlagTime!==null && (parseInt(dataFlagTime)+deltaTimer)>Date.now()) storage.setItem('visitFlag', 'Y');
+            if (dataFlag === null) storage.setItem('visitFlag', 'Y')
+            else if(dataFlag === 'Y') {
+                window.yaContextCb.push(()=>{
+                    Ya.Context.AdvManager.render({
+                        renderTo: 'yandex_rtb_R-A-604547-20',
+                        blockId: 'R-A-604547-20'
+                    })
+                });
+                storage.setItem('visitFlag', 'X')
+                storage.setItem('visitTimer', Date.now())
+            }
+        });
+    </script><script>window.yaContextCb = window.yaContextCb || []</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>
+
+<script>window.setTimeout(() => {
+            window.yaContextCb.push(() => {
+                Ya.Context.AdvManager.render({
+                    type: 'fullscreen',
+                    platform: 'touch',
+                    blockId: 'R-A-604547-112'
+                })
+            })
+        }, 12000)</script>
+
+<script>(function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        m[i].l = 1 * new Date();
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(44565373, "init", {
+        id: 44565373,
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+    });</script>
+<script type="text/javascript">
+function BxSocServPopup(id)
+{
+	var content = BX("bx_socserv_form_"+id);
+	if(content)
+	{
+		var popup = BX.PopupWindowManager.create("socServPopup"+id, BX("bx_socserv_icon_"+id), {
+			autoHide: true,
+			closeByEsc: true,
+			angle: {offset: 24},
+			content: content,
+			offsetTop: 3
+		});
+
+		popup.show();
+
+		var input = BX.findChild(content, {'tag':'input', 'attribute':{'type':'text'}}, true);
+		if(input)
+		{
+			input.focus();
+		}
+
+		var button = BX.findChild(content, {'tag':'input', 'attribute':{'type':'submit'}}, true);
+		if(button)
+		{
+			button.className = 'btn btn-primary';
+		}
+	}
+}
+</script>
+
+</body>
+</html><!--655bc07c8b674e15cbc326e58653fc89-->
