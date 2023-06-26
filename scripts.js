@@ -12,7 +12,7 @@ const casinos = [
         name: "1WIN",
         image: "images/1win.jpg",
         bonus: 500,
-        novelty: 1,
+        novelty: 4,
         url: "https://bit.ly/3Zr35fr",
         description: "+500% на первые 4 депозита и cashback до 30% каждую неделю"
     },
@@ -28,7 +28,7 @@ const casinos = [
         name: "STARDA",
         image: "images/starda.jpg",
         bonus: 100,
-        novelty: 1,
+        novelty: 2,
         url: "https://bit.ly/3juckvm",
         description: "+100% к первому депозиту и до 500 фриспинов"
     },
@@ -36,7 +36,7 @@ const casinos = [
         name: "ROX",
         image: "images/rox.jpg",
         bonus: 200,
-        novelty: 1,
+        novelty: 3,
         url: "https://bit.ly/3sKDIGg",
         description: "250 фриспинов и +200% к первому депозиту"
     },
@@ -44,7 +44,7 @@ const casinos = [
         name: "LEGZO",
         image: "images/legzo.jpg",
         bonus: 200,
-        novelty: 1,
+        novelty: 3,
         url: "https://bit.ly/3NwJ1CY",
         description: "500 фриспинов и +100% к первому депозиту"
     },
@@ -60,7 +60,7 @@ const casinos = [
         name: "DRIP",
         image: "images/drip.jpg",
         bonus: 100000,
-        novelty: 7,
+        novelty: 1,
         url: "https://bit.ly/42hK7rV",
         description: "200 фриспинов и +325% за первые депозиты"
     }
