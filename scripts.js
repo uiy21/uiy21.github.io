@@ -15,7 +15,7 @@ const casinos = [
         novelty: 7,
         url: "https://bit.ly/42hK7rV",
         description: "200 фриспинов и +325% за первые депозиты"
-    }
+    },
     {
         name: "GAMA",
         image: "images/gama.jpg",
