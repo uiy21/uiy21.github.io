@@ -9,13 +9,13 @@ const promoCodes = [
 
 const casinos = [
     {
-        name: "1WIN",
-        image: "images/1win.jpg",
-        bonus: 500,
-        novelty: 1,
-        url: "https://bit.ly/3Zr35fr",
-        description: "+500% на первые 4 депозита и cashback до 30% каждую неделю"
-    },
+        name: "DRIP",
+        image: "images/drip.jpg",
+        bonus: 100000,
+        novelty: 7,
+        url: "https://bit.ly/42hK7rV",
+        description: "200 фриспинов и +325% за первые депозиты"
+    }
     {
         name: "GAMA",
         image: "images/gama.jpg",
@@ -56,13 +56,13 @@ const casinos = [
         url: "https://bit.ly/3fNw4YQ",
         description: "200 фриспинов и +325% за первые депозиты"
     },
-    {
-        name: "DRIP",
-        image: "images/drip.jpg",
-        bonus: 100000,
-        novelty: 7,
-        url: "https://bit.ly/42hK7rV",
-        description: "200 фриспинов и +325% за первые депозиты"
+        {
+        name: "1WIN",
+        image: "images/1win.jpg",
+        bonus: 500,
+        novelty: 1,
+        url: "https://bit.ly/3Zr35fr",
+        description: "+500% на первые 4 депозита и cashback до 30% каждую неделю"
     }
     // ... add other casino objects here
 ];
