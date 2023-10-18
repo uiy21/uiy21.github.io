@@ -55,7 +55,23 @@ const casinos = [
         novelty: 4,
         url: "https://bit.ly/3fNw4YQ",
         description: "200 фриспинов и +325% за первые депозиты"
-    }
+    },
+    {
+        name: "MONRO",
+        image: "images/monro.jpg",
+        bonus: 100000000,
+        novelty: 8,
+        url: "https://bit.ly/3tHGwba",
+        description: "10% кэшбэк и +150% к первому депозиту"
+    },
+	{
+        name: "DADDY",
+        image: "images/daddy.jpg",
+        bonus: 10000000,
+        novelty: 9,
+        url: "http://bit.ly/3OMILkl",
+        description: "10% кэшбэк и +150% к первому депозиту"
+    },
     // ... add other casino objects here
 ];
 
