@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
-
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #1a1a1a;
@@ -107,28 +106,38 @@ button.active {
 }
 
 .casino-item h2 {
-    font-size: 24px;
-    margin: 10px;
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px; /* Добавляет немного места под текстом для линии */
+}
+
+.casino-item h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px; /* Толщина линии */
+    background-color: #00ffff; /* Цвет линии, можно изменить на любой желаемый */
 }
 
 .casino-item a {
-display: block;
-padding: 10px;
-text-decoration: none;
-color: #f0f0f0;
-transition: background-color 0.3s, box-shadow 0.3s;
-text-shadow: 0 0 5px #00ffff;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-shadow: 0 0 5px #00ffff;
 }
 
 .casino-item a:hover {
-background-color: #4a4a4a;
-box-shadow: inset 0 0 10px #00ffff, inset 0 0 20px #00ffff, inset 0 0 30px #00ffff;
+    background-color: #4a4a4a;
+    box-shadow: inset 0 0 10px #00ffff, inset 0 0 20px #00ffff, inset 0 0 30px #00ffff;
 }
 
 .wheel-of-luck {
-text-align: center;
-margin-top: 50px;
+    text-align: center;
+    margin-top: 50px;
 }
 
 .wheel {
@@ -143,64 +152,63 @@ margin-top: 50px;
     pointer-events: none;
 }
 
-
 .wheel-container {
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
-margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
 }
 
 .arrow {
-position: absolute;
-top: 50%;
-left: 40%;
-transform: translate(-100%, -50%);
-font-size: 24px;
-color: #f0f0f0;
-text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-100%, -50%);
+    font-size: 24px;
+    color: #f0f0f0;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
 }
 
 .inactive {
-cursor: default;
-background-color: #777;
-border-color: #999;
+    cursor: default;
+    background-color: #777;
+    border-color: #999;
 }
 
 .inactive:hover {
-background-color: #777;
+    background-color: #777;
 }
 
 .promo-code {
-background-color: #4a4a4a;
-border-color: #4a4a4a;
-cursor: pointer;
-text-shadow: 0 0 5px #00ffff;
-box-shadow: 0 0 10px #00ffff;
+    background-color: #4a4a4a;
+    border-color: #4a4a4a;
+    cursor: pointer;
+    text-shadow: 0 0 5px #00ffff;
+    box-shadow: 0 0 10px #00ffff;
 }
 
 .promo-code:hover {
-background-color: #4a4a4a;
-border-color: #4a4a4a;
+    background-color: #4a4a4a;
+    border-color: #4a4a4a;
 }
 
 .click-to-copy {
-display: inline-block;
-font-size: 14px;
-margin-left: 10px;
-color: #f0f0f0;
-opacity: 0.7;
-transition: opacity 0.3s;
-text-shadow: 0 0 5px #00ffff;
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 10px;
+    color: #f0f0f0;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    text-shadow: 0 0 5px #00ffff;
 }
 
 .click-to-copy:hover {
-opacity: 1;
+    opacity: 1;
 }
 
 .hide-wheel {
-display: none;
+    display: none;
 }
 
 .telegram-channel {
@@ -211,15 +219,15 @@ display: none;
     border-radius: 20px;
     border: 1px solid #555;
     box-shadow: 0 0 10px #00ffff;
-    }
-    
-    .telegram-channel h3 {
+}
+
+.telegram-channel h3 {
     font-size: 24px;
     margin: 10px;
     text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-    }
-    
-    .telegram-button {
+}
+
+.telegram-button {
     background-color: #333;
     border: 1px solid #555;
     border-radius: 50px;
@@ -231,86 +239,95 @@ display: none;
     transition: background-color 0.3s, box-shadow 0.3s;
     text-shadow: 0 0 5px #00ffff;
     box-shadow: 0 0 10px #00ffff;
-    }
+}
 
+.telegram-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #20c9c9;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
 
-    .telegram-link {
-        display: inline-block;
-        text-decoration: none;
-        color: #f0f0f0;
-        font-size: 18px;
-        padding: 10px 20px;
-        background-color: #20c9c9;
-        border-radius: 50px;
-        transition: background-color 0.3s;
-    }
-    
-    .telegram-link:hover {
-        background-color: #1ca5a5;
-    }
-    
-    .telegram-link i {
-        margin-right: 5px;
-    }
+.telegram-link:hover {
+    background-color: #1ca5a5;
+}
 
-    .telegram-button:hover {
-        background-color: #555;
-        box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-        }
-        
-        .footer {
-        text-align: center;
-        padding: 20px;
-        position: relative;
-        background-color: #333;
-        border-top: 1px solid #555;
-        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-        }
-        
-        .footer p {
-        margin: 0;
-        padding: 0;
-        font-size: 14px;
-        }
-        
-        .neon-glow {
-            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-            }
-            
-            @keyframes glowing {
-            0% {
-            text-shadow: 0 0 2px #00ffff, 0 0 5px #00ffff, 0 0 10px #00ffff;
-            }
-            50% {
-            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
-            }
-            100% {
-            text-shadow: 0 0 2px #00ffff, 0 0 5px #00ffff, 0 0 10px #00ffff;
-            }
-            }
-            
-            .glowing-text {
-            animation: glowing 2s infinite;
-            }
-            
-/* Add this code to styles.css */
+.telegram-link i {
+    margin-right: 5px;
+}
+
+.telegram-button:hover {
+    background-color: #555;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    background-color: #333;
+    border-top: 1px solid #555;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
+
+.footer p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.neon-glow {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
+
+@keyframes glowing {
+    0% {
+        text-shadow: 0 0 2px #00ffff, 0 0 5px #00ffff, 0 0 10px #00ffff;
+    }
+    50% {
+        text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+    }
+    100% {
+        text-shadow: 0 0 2px #00ffff, 0 0 5px #00ffff, 0 0 10px #00ffff;
+    }
+}
+
+.glowing-text {
+    animation: glowing 2s infinite;
+}
+
 @media (max-width: 767px) {
     .casino-list {
         grid-template-columns: repeat(2, 1fr);
     }
-}
+    .casino-item {
+        padding: 10px; /* Уменьшаем внутренние отступы */
+    }
 
-/* ... other styles ... */
+    .casino-item h2 {
+        margin-top: 10px; /* Уменьшаем верхний отступ для названия */
+        margin-bottom: 5px; /* Уменьшаем нижний отступ перед описанием */
+    }
+
+    .casino-item p {
+        margin-top: 5px; /* Уменьшаем верхний отступ для описания */
+        margin-bottom: 10px; /* Уменьшаем нижний отступ после описания */
+    }
+}
 
 @media (max-width: 480px) {
     .casino-list {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 10px;
-        padding: 0 5px; /* Add padding to the sides */
+        padding: 0 5px;
     }
 
     .casino-item {
-        padding: 0 0px; /* Add padding to the casino items */
+        padding: 0 0px;
     }
 
     .sort-controls {
@@ -328,111 +345,100 @@ display: none;
     }
 }
 
-/* ... other styles ... */
-
-
-
-/* Add this media query to styles.css */
 @media (max-width: 600px) {
     .arrow {
         left: 20%;
     }
 }
-            .modal {
-                display: none;
-                position: fixed;
-                z-index: 1000;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                overflow: auto;
-                background-color: rgba(26, 26, 26, 0.8);
-            }
-            
-            .modal-content {
-                background-color: #333;
-                color: #f0f0f0;
-                margin: 15% auto;
-                padding: 20px;
-                border-radius: 20px;
-                border: 1px solid #555;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                width: 80%;
-                max-width: 600px; /* Limit the maximum width */
-                text-align: center;
-                font-family: 'Orbitron', sans-serif;
-                text-shadow: 0 0 5px #00ffff;
-            }
-            
-            .modal-button {
-                background-color: #333;
-                color: white;
-                padding: 10px 20px;
-                margin: 10px;
-                border: 1px solid #555;
-                border-radius: 50px;
-                cursor: pointer;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                transition-duration: 0.4s;
-                text-shadow: 0 0 5px #00ffff;
-                box-shadow: 0 0 10px #00ffff;
-            }
-            
-            .modal-button:hover {
-                background-color: #555;
-                color: white;
-                box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-            }
-            
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(26, 26, 26, 0.8);
+}
 
-            #notification-bar {
-                position: static;
-                top: 0;
-                left: 0;
-                right: 0;
-                background-color: #ff0000;
-                color: #fff;
-                padding: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                font-size: 14px;
-                z-index: 1000;
-            }
-            
-            
-            #notification-bar p {
-                margin: 0;
-                margin-right: 10px;
-            }
-            
-            #copy-link,
-            #close-notification {
-                background: none;
-                color: #fff;
-                border: 1px solid #fff;
-                padding: 5px 10px;
-                margin-left: 5px;
-                cursor: pointer;
-            }
-            
-            #close-notification {
-                border: none;
-                font-weight: bold;
-            }
+.modal-content {
+    background-color: #333;
+    color: #f0f0f0;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #555;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 5px #00ffff;
+}
 
-            #notification-bar button:hover {
-            background-color: #555;
-            }           
-        
+.modal-button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 1px solid #555;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    text-shadow: 0 0 5px #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+}
 
+.modal-button:hover {
+    background-color: #555;
+    color: white;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
 
-/* ... other CSS code ... */
+#notification-bar {
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+#notification-bar p {
+    margin: 0;
+    margin-right: 10px;
+}
+
+#copy-link,
+#close-notification {
+    background: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+#close-notification {
+    border: none;
+    font-weight: bold;
+}
+
+#notification-bar button:hover {
+    background-color: #555;
+}
 
 .telegram-window {
     background-color: #333;
@@ -446,23 +452,23 @@ display: none;
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .telegram-window h4 {
+}
+
+.telegram-window h4 {
     font-size: 18px;
     margin: 0;
     margin-bottom: 5px;
     text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-  }
-  
-  .telegram-window p {
+}
+
+.telegram-window p {
     font-size: 14px;
     margin: 0;
     margin-bottom: 10px;
     text-shadow: 0 0 5px #00ffff;
-  }
-  
-  .telegram-window-link {
+}
+
+.telegram-window-link {
     display: inline-block;
     text-decoration: none;
     color: #f0f0f0;
@@ -471,16 +477,51 @@ display: none;
     background-color: #20c9c9;
     border-radius: 50px;
     transition: background-color 0.3s;
-  }
-  
-  .telegram-window-link:hover {
+}
+
+.telegram-window-link:hover {
     background-color: #1ca5a5;
-  }
-  
-  .telegram-window-link i {
+}
+
+.telegram-window-link i {
     margin-right: 5px;
-  }
-  
-  /* ... other CSS code ... */
-/* ... other CSS code ... */
+}
+
+.telegram-window h4 i {
+    margin-right: 2px; /* Устанавливает отступ справа для иконки. Измените значение по желанию. */
+}
+
+.wheel-of-luck h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px; /* Добавляет пространство под текстом для линии */
+}
+
+.wheel-of-luck h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px; /* Толщина линии */
+    background-color: #00ffff; /* Цвет линии, можно настроить */
+}
+
+#spin-wheel {
+    display: block; /* Убедитесь, что кнопка блочного типа, если нужно */
+    margin: auto; /* Центрирование кнопки, если это необходимо */
+}
+
+
+@media (min-width: 768px) {
+    body {
+        max-width: 2000px; /* Максимальная ширина сайта */
+        margin: 0 auto; /* Автоматические отступы для центрирования */
+        padding: 0 20px; /* Добавьте немного внутренних отступов по бокам */
+    }
+}
+
+
+
+
 

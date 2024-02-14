@@ -9,6 +9,14 @@ const promoCodes = [
 
 const casinos = [
     {
+        name: "1GO",
+        image: "images/1go.jpg",
+        bonus: 100000,
+        novelty: 12,
+        url: "https://bit.ly/48jpChA",
+        description: "125 фриспинов и +150% за первые депозиты"
+    },
+    {
         name: "DRIP",
         image: "images/drip.jpg",
         bonus: 100000,
