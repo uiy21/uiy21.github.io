@@ -1,0 +1,645 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Bounce анимация */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Дополнительные стили для шапки сайта */
+header {
+  background-color: #1f2937; /* Темный фон шапки */
+}
+header a {
+  color: white; /* Цвет текста ссылок */
+}
+header nav ul {
+  display: flex;
+  gap: 1rem; /* Пробел между ссылками */
+}
+header nav ul li {
+  list-style: none; /* Убираем маркеры списка */
+}
+header nav ul li a {
+  text-decoration: none; /* Убираем подчеркивание ссылок */
+  padding: 0.5rem 1rem;
+}
+header nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Фон при наведении на ссылки */
+  border-radius: 0.25rem; /* Радиус закругления фона */
+}
+header .nav-link.active {
+  border-bottom: 2px solid #4299e1; /* Активная ссылка */
+}
+
+/* Стили для секции Телеграм канала */
+section.bg-gray-700 {
+  padding: 2rem 0; /* Увеличение высоты секции */
+  border-bottom: 1px solid #4a5568; /* Нижняя граница */
+}
+section.bg-gray-700 p {
+  color: #cbd5e0; /* Светло-серый текст */
+}
+section.bg-gray-700 a {
+  background-color: #4299e1; /* Синий фон кнопки */
+}
+section.bg-gray-700 a:hover {
+  background-color: #2b6cb0; /* Темно-синий фон при наведении */
+}
+section.bg-gray-700 i {
+  margin-right: 0.5rem; /* Отступ справа у значка Телеграмма */
+}
+
+/* Стили для информации о раздаче бездепозитных промокодов */
+section.bg-gray-800 {
+  padding: 2rem 0; /* Увеличение высоты секции */
+  border-bottom: 1px solid #4a5568; /* Нижняя граница */
+}
+section.bg-gray-800 p {
+  color: #cbd5e0; /* Светло-серый текст */
+}
+section.bg-gray-800 a {
+  background-color: #ffc107; /* Желтый фон кнопки */
+}
+section.bg-gray-800 a:hover {
+  background-color: #e0a800; /* Темно-желтый фон при наведении */
+}
+section.bg-gray-800 i {
+  margin-right: 0.5rem; /* Отступ справа у значка подарка */
+}
+
+/* Стили для выпадающего списка сортировки */
+.relative {
+  display: inline-block;
+  width: 100%; /* Увеличение ширины выпадающего списка */
+  max-width: none; /* Убираем ограничение на максимальную ширину */
+}
+.form-select {
+  background-color: #2d3748; /* Темный фон выпадающего списка */
+  color: white;
+  border: 1px solid #4a5568;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.form-select:hover {
+  background-color: #3c4858;
+  border-color: #2b6cb0;
+}
+.form-select:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+/* Стили для кнопок */
+button {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+button:hover {
+  background-color: #2b6cb0; /* Темно-синий фон при наведении */
+  transform: translateY(-2px);
+}
+button:active {
+  transform: translateY(0);
+}
+
+/* Карточки казино */
+.card {
+  background-color: #2d3748; /* Темный фон карточки */
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.card img {
+  height: auto; /* Корректируем высоту изображения */
+}
+
+/* Футер */
+footer {
+  background-color: #1f2937; /* Темный фон футера */
+  text-align: center;
+  padding: 1rem 0;
+}
+footer p {
+  color: #cbd5e0; /* Светло-серый текст */
+}
+
+/* Модальное окно */
+#modal, #contactModal, #promoModal, #noPrizeModal {
+  transition: opacity 0.3s ease;
+}
+
+#modal.show, #contactModal.show, #promoModal.show, #noPrizeModal.show {
+  display: flex;
+  opacity: 1;
+}
+
+#modal.hidden, #contactModal.hidden, #promoModal.hidden, #noPrizeModal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Анимация загрузки */
+#preloader {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Плавающая кнопка "Наверх" */
+#scrollTopButton {
+  background-color: #4299e1;
+  padding: 1rem;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#scrollTopButton:hover {
+  background-color: #2b6cb0;
+  transform: scale(1.1);
+}
+
+/* Стиль для заголовков секций */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f8fafc;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid #4299e1;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+/* Стили для мобильного меню */
+#mobile-menu {
+  background-color: #2d3748;
+  padding: 1rem;
+}
+#mobile-menu a {
+  display: block;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+#mobile-menu a:hover {
+  background-color: #4a5568;
+}
+
+/* Подсветка активного пункта меню */
+.nav-link.active {
+  border-bottom: 2px solid #4299e1;
+}
+
+/* Плавная анимация для появления текста */
+.fade-in-text {
+  opacity: 0;
+  animation: fadeInText 2s forwards;
+}
+
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Индикатор прокрутки страницы */
+#progress-bar {
+  height: 4px;
+  width: 0;
+  background-color: #4299e1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: width 0.25s ease-out;
+}
+
+/* Интерактивные кнопки "Сортировать по" */
+.sort-button:hover {
+  background-color: #2b6cb0;
+  transform: scale(1.05);
+}
+
+/* Анимированные переключатели для фильтров */
+.filter-switch {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  border-radius: 10px;
+  background-color: #2d3748;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.filter-switch::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  border-radius: 50%;
+  background-color: #4299e1;
+  transition: transform 0.3s ease;
+}
+.filter-switch.active {
+  background-color: #4a5568;
+}
+.filter-switch.active::before {
+  transform: translateX(20px);
+}
+
+/* Разделители секций с изменением цветовой гаммы */
+.section-divider {
+  background-color: #3c4858;
+  height: 2px;
+  margin: 2rem 0;
+}
+
+/* Плавная анимация для отображения списка казино */
+.casino-list {
+  opacity: 0;
+  animation: fadeInList 1s forwards;
+}
+
+@keyframes fadeInList {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Стили для 404-страницы */
+.h-screen {
+  height: 100vh;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* Стили для блока "Получите бездепозитный промокод" */
+#cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card-item {
+  background-color: #2d3748;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.card-item.selected {
+  background-color: #1f8ef1; /* Синий цвет для выбранной карточки */
+  color: white;
+}
+.card-item.clickable {
+  cursor: pointer;
+}
+.card-item.unclickable {
+  cursor: default;
+}
+
+/* Стили для мобильного баннера */
+#mobile-banner {
+  font-size: 0.875rem; /* Размер текста */
+  line-height: 1.25rem; /* Высота строки */
+  text-align: center; /* Выравнивание текста */
+  padding: 0.5rem 1rem; /* Отступы */
+  background-color: #ffc107; /* Фон */
+  color: black; /* Цвет текста */
+  position: fixed; /* Фиксированное позиционирование */
+  top: 0; /* Расположение сверху */
+  width: 100%; /* Ширина 100% */
+  z-index: 100; /* Z-index */
+}
+
+#copy-link-button {
+  background-color: #e0a800; /* Темно-желтый фон кнопки */
+  color: white; /* Цвет текста кнопки */
+  font-weight: 600; /* Толщина текста */
+  border-radius: 0.375rem; /* Радиус скругления */
+  padding: 0.25rem 0.75rem; /* Внутренние отступы */
+  margin-left: 0.5rem; /* Отступ слева */
+}
+
+#close-banner-button {
+  background-color: #dc3545; /* Красный фон кнопки */
+  color: white; /* Цвет текста кнопки */
+  font-weight: 600; /* Толщина текста */
+  border-radius: 0.375rem; /* Радиус скругления */
+  padding: 0.25rem 0.75rem; /* Внутренние отступы */
+  margin-left: 0.5rem; /* Отступ слева */
+}
+
+
+/* Обновленные стили для секции Телеграм канала */
+.telegram-section {
+  background: linear-gradient(to right, #2d3748, #4a5568);
+  color: white;
+  padding: 2rem 0;
+  border-bottom: 1px solid #4a5568;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.telegram-section p {
+  color: #f8fafc;
+  font-family: 'Roboto', sans-serif; /* Изменение шрифта */
+}
+
+.telegram-section .telegram-button {
+  background: #3182ce;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Roboto', sans-serif; /* Изменение шрифта */
+}
+
+.telegram-section .telegram-button:hover {
+  background: #2b6cb0;
+}
+
+/* Обновленные стили для секции информации о раздаче бездепозитных промокодов */
+.no-deposit-section {
+  background: linear-gradient(to right, #2d3748, #4a5568);
+  color: white;
+  padding: 2rem 0;
+  border-bottom: 1px solid #4a5568;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.no-deposit-section p {
+  color: #f8fafc;
+  font-family: 'Roboto', sans-serif; /* Изменение шрифта */
+}
+
+.no-deposit-section .no-deposit-button {
+  background: #ecc94b;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Roboto', sans-serif; /* Изменение шрифта */
+}
+
+.no-deposit-section .no-deposit-button:hover {
+  background: #d69e2e;
+}
+
+
+/* Стили для раздела с бездепами */
+#no-deposit-section {
+  background-color: #1a202c;
+  padding: 2rem 0;
+  border-top: 1px solid #4a5568;
+}
+
+#no-deposit-section .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f8fafc;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ecc94b;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+#play-button {
+  background-color: #ecc94b;
+  color: #1a202c;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#play-button:hover {
+  background-color: #d69e2e;
+  transform: scale(1.05);
+}
+
+/* Карточки для игры */
+#cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+  max-width: 500px; /* Ограничиваем максимальную ширину контейнера */
+}
+
+.card-item {
+  background-color: #2d3748;
+  color: white;
+  padding: 1rem; /* Уменьшаем внутренний отступ */
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1rem; /* Уменьшаем размер текста */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-item:nth-child(odd) {
+  background-color: #2c3e50;
+}
+
+.card-item:hover {
+  transform: scale(1.05);
+  background-color: #4a5568;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-item.selected {
+  background-color: #1f8ef1;
+  color: white;
+}
+
+.card-item.clickable {
+  cursor: pointer;
+}
+
+.card-item.unclickable {
+  cursor: default;
+}
+
+
+/* Шапка сайта */
+header {
+  background-color: #1f2937; /* Темный фон шапки */
+}
+
+header a {
+  color: white; /* Цвет текста ссылок */
+  text-decoration: none;
+}
+
+header nav ul {
+  display: flex;
+  gap: 1rem; /* Пробел между ссылками */
+}
+
+header nav ul li {
+  list-style: none; /* Убираем маркеры списка */
+}
+
+header nav ul li a {
+  text-decoration: none; /* Убираем подчеркивание ссылок */
+  padding: 0.5rem 1rem;
+}
+
+header nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Фон при наведении на ссылки */
+  border-radius: 0.25rem; /* Радиус закругления фона */
+}
+
+header .nav-link.active {
+  border-bottom: 2px solid #4299e1; /* Активная ссылка */
+}
+
+/* Обновленный стиль заголовка рядом с логотипом */
+#site-title {
+  font-family: 'Roboto', sans-serif; /* Изменение шрифта */
+  font-size: 1.6rem; /* Изменение размера текста */
+  font-weight: 700; /* Толщина шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  letter-spacing: 0.1rem; /* Расстояние между буквами */
+  color: #f8fafc; /* Цвет текста */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Тень текста */
+}
+
+/* Подключение шрифта Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+/* Обновленные стили для секции Телеграм канала */
+.telegram-section {
+  background: linear-gradient(to right, #2d3748, #4a5568); /* Градиентный фон */
+  color: white;
+  padding: 2rem 0;
+  border-bottom: 4px solid #3182ce; /* Разделительная линия снизу */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.telegram-section p {
+  color: #f8fafc;
+  font-family: 'Roboto', sans-serif;
+}
+
+.telegram-section .telegram-button {
+  background: #3182ce;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.telegram-section .telegram-button:hover {
+  background: #2b6cb0;
+}
+
+/* Обновленные стили для секции информации о раздаче бездепозитных промокодов */
+.no-deposit-section {
+  background: linear-gradient(to right, #1a202c, #2d3748); /* Градиентный фон */
+  color: white;
+  padding: 2rem 0;
+  border-top: 4px solid #ecc94b; /* Разделительная линия сверху */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.no-deposit-section p {
+  color: #f8fafc;
+  font-family: 'Roboto', sans-serif;
+}
+
+.no-deposit-section .no-deposit-button {
+  background: #ecc94b;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.no-deposit-section .no-deposit-button:hover {
+  background: #d69e2e;
+}

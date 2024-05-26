@@ -1,8 +1,5 @@
-<!-- BEGIN: Additional Code -->
-<section class="interesting-section"></section>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
@@ -34,96 +31,194 @@
     <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бонусы Казино</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Add this line for Font Awesome -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="scripts.js" defer></script>
+    <title>Казино Бонусы</title>
+    <link href="dist/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/mobile-styles.css" media="(max-width: 768px)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 text-gray-200">
+    <!-- Индикатор прокрутки страницы -->
+    <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-blue-500"></div>
 
-<body>
-    <div id="notification-bar">
-        <p>Если вы перешли из Тик Тока, рекомендуем скопировать ссылку на этот сайт и вставить её в свой браузер</p>
-        <button id="copy-link">Скопировать</button>
-        <button id="close-notification">&times;</button>
-    </div>
-    <header>
-        <div class="site-title">
-            <h1>🔥 Бонусы на казино 🔥</h1>
-        </div>
-    </header>
-    <div class="telegram-window">
-        <h4><i class="fab fa-telegram-plane" style="color: white;"></i> Телеграм канал с бонусами</h4>
-        <p>Следите за обновлениями и новыми бонусами</p>
-        <a href="https://t.me/zanos_weeks/17" class="telegram-window-link" target="_blank">
-            Присоединиться
-        </a>
-    </div>
-    
-    <section class="random-controls">
-        <button id="bezdep-promo">🎁 Раздача бездепов</button>
-    </section>
-    <section class="sort-controls">
-        <button id="random-select">🎲 Случайный</button>
-        <button id="sort-alpha">🔤 По алфавиту</button>
-        <button id="sort-bonus">💰 По бонусам</button>
-        <button id="sort-novelty">🆕 Новинки</button>
-    </section>
-    <section class="casino-list">
-        <!-- Casino blocks will be generated here -->
-    </section>
-    <!-- Add the arrow and wrap the wheel and arrow in a container -->
-    <section class="wheel-of-luck">
-        <h2>Колесо удачи с промокодами на 5€ [Gama]</h2>
-        <button id="spin-wheel">🎡 Крутить колесо</button>
-        <div class="wheel-container">
-            <!-- Replace the arrow character with an SVG arrow -->
-            <span class="arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#f0f0f0">
-                    <path
-                        d="M11.146 6.354a.5.5 0 0 1 .708 0l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 0 1-.708-.708L15.793 12l-4.647-4.646a.5.5 0 0 1 0-.708z" />
-                </svg>
-            </span>
-            <img src="images/wheel.png" alt="Wheel of Luck" class="wheel" id="wheel">
-        </div>
-    </section>
-    <section class="telegram-channel">
-        <h2><i class="fab fa-telegram-plane" style="color: white;"></i> Присоединяйтесь к нашему Telegram-каналу с розыгрышами</h2>
-        <a href="https://t.me/zanos_weeks" target="_blank" class="telegram-link">
-            Присоединиться
-        </a>
-    </section>
-    
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <h2>Перейти на сайт выбранного казино?</h2>
-            <h3 id="modal-casino-name"></h3>
-            <img id="modal-casino-image" src="" alt="" width="200">
-            <p id="modal-casino-description"></p>
-            <button id="modal-cancel" class="modal-button">Отменить</button>
-            <a id="modal-go" class="modal-button">Перейти</a>
-        </div>
+    <!-- Анимация загрузки -->
+    <div id="preloader" class="fixed inset-0 bg-gray-900 flex items-center justify-center z-50">
+        <div class="loader"></div>
     </div>
 
-    <div id="promo-code-modal" class="modal">
-        <div class="modal-content">
-            <h2>Промокод:</h2>
-            <p id="promo-code-text"></p>
-            <button id="promo-code-copy">Скопировать</button>
-            <button id="promo-code-cancel">Отмена</button>
+    <!-- Плашка для пользователей с мобильных устройств -->
+    <div id="mobile-banner" class="fixed top-0 left-0 w-full bg-yellow-500 text-black text-center py-2 px-4 hidden">
+        Если вы перешли из Тик Тока, рекомендуем скопировать ссылку на этот сайт и вставить её в свой браузер
+        <button id="copy-link-button" class="bg-yellow-600 text-white font-semibold px-3 py-1 rounded ml-2">Скопировать</button>
+        <button id="close-banner-button" class="text-white font-semibold px-3 py-1 rounded ml-2">×</button>
+    </div>
+
+<!-- Шапка сайта -->
+<header class="bg-gray-900 shadow-md">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <img src="images/logo.png" alt="Казино Бонусы Логотип" class="h-10 w-10">
+            <a href="#" class="text-white text-4xl font-extrabold tracking-wide" id="site-title">Заносы Бонус</a>
+        </div>
+        <div class="hidden md:flex space-x-8 items-center">
+            <a href="#" class="text-gray-300 hover:text-white transition duration-200 nav-link">Главная</a>
+            <a href="#no-deposit-section" class="text-gray-300 hover:text-white transition duration-200 nav-link">Раздача бездепов</a>
+            <a href="#" class="text-gray-300 hover:text-white transition duration-200 nav-link" id="contact-button">Контакты</a>
+            <a href="https://t.me/zanos_weeks/17" class="text-gray-300 hover:text-white transition duration-200">
+                <i class="fab fa-telegram fa-2x"></i>
+            </a>
+        </div>
+        <div class="md:hidden">
+            <button id="menu-button" class="text-gray-300 focus:outline-none">
+                <i class="fas fa-bars fa-2x"></i>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 nav-link">Главная</a>
+            <a href="#no-deposit-section" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 nav-link">Раздача бездепов</a>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 nav-link" id="contact-button-mobile">Контакты</a>
+            <a href="https://t.me/zanos_weeks/17" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">
+                <i class="fab fa-telegram fa-2x"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+
+    <!-- Плавающая кнопка "Наверх" -->
+    <button id="scrollTopButton" class="fixed bottom-10 right-10 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-transform transform hover:scale-110 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+<!-- Секция Телеграм канала -->
+<section class="bg-gray-700 py-8 border-b border-gray-600 telegram-section">
+    <div class="container mx-auto text-center">
+        <div class="flex justify-center items-center space-x-2 mb-4">
+            <i class="fab fa-telegram fa-2x text-blue-400 animate-bounce"></i>
+            <p class="text-lg text-gray-100 font-bold animate-bounce">Следите за обновлениями и новыми бонусами</p>
+        </div>
+        <a href="https://t.me/zanos_weeks/17" class="inline-block px-4 py-2 mt-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 shadow-lg transition-transform transform hover:scale-105 animate-bounce">Телеграм канал с бонусами</a>
+    </div>
+</section>
+
+<!-- Секция информации о раздаче бездепозитных промокодов -->
+<section class="bg-gray-800 py-8 border-b border-gray-600 no-deposit-section">
+    <div class="container mx-auto text-center">
+        <div class="flex justify-center items-center space-x-2 mb-4">
+            <i class="fas fa-gift fa-2x text-yellow-400 animate-bounce"></i>
+            <p class="text-lg text-gray-100 font-bold animate-bounce">Раздача бездепозитных промокодов! Участвуйте и выигрывайте!</p>
+        </div>
+        <a href="#no-deposit-section" class="inline-block px-4 py-2 mt-2 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 shadow-lg transition-transform transform hover:scale-105 animate-bounce">Перейти к раздаче</a>
+    </div>
+</section>
+
+
+    <!-- Секция сортировки с измененным фоном -->
+    <section class="bg-gray-900 py-8 border-t border-gray-600">
+        <div class="container mx-auto">
+            <div class="text-center mb-4">
+                <p class="text-lg font-semibold">Сортировать по:</p>
+            </div>
+            <div class="flex justify-between bg-gray-800 p-6 rounded-lg shadow-lg">
+                <div class="relative inline-block w-full">
+                    <select id="sortDropdown" class="block appearance-none w-full bg-gray-700 border border-gray-600 text-gray-200 py-3 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-gray-600 focus:border-gray-500 transition duration-300">
+                        <option value="name">&#x1F516; По алфавиту</option>
+                        <option value="bonus">&#x1F4B0; По бонусам</option>
+                        <option value="novelty">&#x1F31F; Новинки</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+                <button id="randomCasino" class="ml-4 inline-block px-4 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 shadow-lg transition-transform transform hover:scale-105 flex items-center">
+                    <i class="fas fa-random mr-2"></i> Случайный
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция с казино -->
+    <section class="bg-gray-800 py-8 border-t border-gray-600">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="casino-grid">
+            </div>
+        </div>
+    </section>
+
+<!-- Секция "Получите бездепозитный промокод" -->
+<section id="no-deposit-section" class="bg-gray-900 py-8 border-t border-gray-600">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-4 section-title">Получите бездепозитный промокод</h2>
+        <p class="text-lg mb-4">Нажмите "Играть", чтобы перемешать карточки, и угадайте, где находится приз!</p>
+        <div class="mb-8">
+            <button id="play-button" class="px-6 py-3 mt-4 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 shadow-lg transition-transform transform hover:scale-105">Играть</button>
+        </div>
+        <div id="cards-container" class="grid grid-cols-3 gap-4 mt-8 mx-auto max-w-xl">
+            <div class="card-item bg-gray-700 hover:bg-gray-600" data-value="100$">100$</div>
+            <div class="card-item bg-gray-700 hover:bg-gray-600" data-value="100$">100$</div>
+            <div class="card-item bg-gray-700 hover:bg-gray-600" data-value="5$">5$</div>
+            <div class="card-item bg-gray-700 hover:bg-gray-600" data-value="5$">5$</div>
+            <div class="card-item bg-gray-700 hover:bg-gray-600" data-value="5$">5$</div>
+            <div class="card-item bg-gray-700 hover:bg-gray-600" data-value="Ничего">Ничего</div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Модальное окно для промокода -->
+    <div id="promoModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center max-w-md">
+            <h2 class="text-2xl font-bold mb-4">Поздравляем!</h2>
+            <p class="mb-4">Вы выиграли 5$. Ваш промокод на Cat Casino:</p>
+            <p class="mb-4 text-lg font-semibold" id="promoCode">PROMOCODE</p>
+            <a href="https://catcasino.com" class="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 shadow-lg transition-transform transform hover:scale-105">Перейти в Cat Casino</a>
+            <button id="closePromoModal" class="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 mt-4">Закрыть</button>
         </div>
     </div>
 
-    <!-- Add this code at the end of your HTML file, just before the closing body tag -->
-    <div id="rulesModal" class="modal">
-        <div class="modal-content">
-            <h2>All information in Telegram</h2>
-            <button class="modal-button" id="closeRulesModal">Close</button>
+    <!-- Модальное окно для результата "ничего не выпало" -->
+    <div id="noPrizeModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center max-w-md">
+            <h2 class="text-2xl font-bold mb-4">Упс!</h2>
+            <p class="mb-4">Ничего не выпало, попробуйте еще раз.</p>
+            <button id="closeNoPrizeModal" class="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 mt-4">Закрыть</button>
         </div>
     </div>
 
+    <!-- Модальное окно для контактов -->
+    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center max-w-md">
+            <h2 class="text-2xl font-bold mb-4">Контакты</h2>
+            <p class="mb-4">По всем вопросам пишите в телеграм</p>
+            <a href="https://t.me/playsup" class="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 shadow-lg transition-transform transform hover:scale-105">
+                <i class="fab fa-telegram mr-2"></i>@playsup
+            </a>
+            <button id="closeContactModal" class="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 mt-4">Закрыть</button>
+        </div>
+    </div>
 
+    <!-- Модальное окно -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center max-w-md">
+            <h2 class="text-2xl font-bold mb-4" id="modal-title">Название казино</h2>
+            <p class="mb-4" id="modal-description">Описание казино...</p>
+            <button id="closeModal" class="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="bg-gray-900 py-6 mt-8 border-t border-gray-600">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="https://t.me/zanos_weeks/17" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-telegram fa-2x"></i></a>
+            </div>
+            <p class="text-gray-400">&copy; 2024 Казино Бонусы. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="casinos.js"></script>
+    <script src="app.js"></script>
 </body>
-
 </html>
