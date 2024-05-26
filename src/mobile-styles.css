@@ -178,7 +178,7 @@ section.bg-gray-700 a {
 
 /* Секция информации о раздаче бездепозитных промокодов */
 section.bg-gray-800 {
-    padding: 1rem 0; /* Уменьшение высоты секции */
+    padding: 0.2rem 0; /* Уменьшение высоты секции */
 }
 
 section.bg-gray-800 p {
@@ -206,3 +206,64 @@ section.bg-gray-800 a {
 .card-header {
         display: none; /* Скрываем элементы */
     }
+
+
+/* Стили для карточек */
+.card {
+    background-color: #2d3748;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 100%; /* Ограничение максимальной ширины */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #cbd5e0;
+}
+
+.card button {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.card button:hover {
+    transform: scale(1.05);
+}
+
+.card .bg-green-500 {
+    background-color: #48bb78;
+}
+
+.card .bg-green-500:hover {
+    background-color: #38a169;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+    .card .flex.items-center i {
+        font-size: 0.75rem; /* Уменьшаем размер звездочки */
+    }
+
+    .card .flex.items-center span {
+        font-size: 0.75rem; /* Уменьшаем размер текста рейтинга */
+    }
+}
