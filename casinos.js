@@ -94,7 +94,7 @@ const casinos = [
         image: "images/lex.jpg",
         bonus: 1000000000000,
         novelty: 14,
-        url: "http://bit.ly/3OMILkl",
+        url: "https://bit.ly/3KiyZEr",
         description: "400 фриспинов и +225% к первому депозиту",
         giftText: "Топ бонус",
         starRating: 4.9
