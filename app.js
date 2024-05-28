@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const playButton = document.getElementById('play-button');
     const cardsContainer = document.getElementById('cards-container');
     const cards = Array.from(document.querySelectorAll('.card-item'));
-    const promoCodes = ['PROMOCODE1', 'PROMOCODE2', 'PROMOCODE3', 'PROMOCODE4', 'PROMOCODE5'];
+    const promoCodes = ['GAMR4STYZTP0', 'GAMV59DCGRHE', 'GAMD66G3EN1O', 'GAMM7K27TGDB', 'GAMG73IUCILO'];
 
     playButton.addEventListener('click', () => {
         cards.forEach(card => {
