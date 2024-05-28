@@ -130,7 +130,9 @@ document.addEventListener('DOMContentLoaded', function () {
         renderCasinos([casinos[randomIndex]]);
     });
 
-    renderCasinos(casinos);
+    // Изначальная сортировка по новинкам
+    const initialSortedCasinos = [...casinos].sort((a, b) => b.novelty - a.novelty);
+    renderCasinos(initialSortedCasinos);
 
     // Раздача бездепов
     const playButton = document.getElementById('play-button');

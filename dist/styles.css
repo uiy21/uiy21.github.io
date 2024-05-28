@@ -795,10 +795,6 @@ select {
   position: absolute;
 }
 
-.relative {
-  position: relative;
-}
-
 .inset-0 {
   inset: 0px;
 }
@@ -863,6 +859,10 @@ select {
 
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
 }
 
 .mt-2 {
