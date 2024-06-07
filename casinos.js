@@ -84,7 +84,7 @@ const casinos = [
         image: "images/daddy.jpg",
         bonus: 10000000,
         novelty: 9,
-        url: "http://bit.ly/3OMILkl",
+        url: "https://bit.ly/3yK9ZDC",
         description: "10% кэшбэк и +150% к первому депозиту",
         giftText: "Папин бонус",
         starRating: 4.6
