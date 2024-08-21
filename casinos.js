@@ -24,7 +24,7 @@ const casinos = [
         image: "images/gama.jpg",
         bonus: 1000,
         novelty: 6,
-        url: "https://bit.ly/3YHRase",
+        url: "https://bit.ly/3YU10L3",
         description: "+200% к первому депозиту и 200 фриспинов",
         giftText: "Эксклюзивный бонус",
         starRating: 4.2
