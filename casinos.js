@@ -99,4 +99,14 @@ const casinos = [
         giftText: "Топ бонус",
         starRating: 4.9
     },
+    {
+        name: "GIZBO",
+        image: "images/gizby.jpg",
+        giftText: "Топ бонус",
+        starRating: 4.9,
+        bonus: 10000000000,
+        novelty: 10,
+        url: "https://bit.ly/40KLBxz",
+        description: "225% и +600% к первому депозиту"
+    },
 ];
