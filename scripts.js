@@ -82,7 +82,7 @@ const casinos = [
     },
 		{
         name: "GIZBO",
-        image: "images/gizbo.jpg",
+        image: "images/gizby.jpg",
         bonus: 10000000000,
         novelty: 10,
         url: "https://bit.ly/40KLBxz",
