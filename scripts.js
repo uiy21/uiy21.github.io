@@ -80,6 +80,14 @@ const casinos = [
         url: "http://bit.ly/3OMILkl",
         description: "10% кэшбэк и +150% к первому депозиту"
     },
+		{
+        name: "GIZBO",
+        image: "images/gizbo.jpg",
+        bonus: 10000000000,
+        novelty: 10,
+        url: "https://bit.ly/40KLBxz",
+        description: "225% и +600% к первому депозиту"
+    },
     // ... add other casino objects here
 ];
 
