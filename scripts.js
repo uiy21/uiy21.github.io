@@ -87,7 +87,7 @@ const casinos = [
         novelty: 10,
         url: "https://bit.ly/40KLBxz",
         description: "225% и +600% к первому депозиту"
-    },
+    }
     // ... add other casino objects here
 ];
 
