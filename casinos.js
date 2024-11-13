@@ -109,4 +109,34 @@ const casinos = [
         url: "https://bit.ly/40KLBxz",
         description: "225% и +600% к первому депозиту"
     },
+        {
+        name: "KOMETA",
+        image: "images/kometa.jpg",
+        giftText: "Крутой бонус",
+        starRating: 4.6,
+        bonus: 10000000000,
+        novelty: 19,
+        url: "https://bit.ly/40RfHPY",
+        description: "225% и +500FS к первому депозиту"
+    },
+            {
+        name: "R7",
+        image: "images/r7.jpg",
+        giftText: "Классный бонус",
+        starRating: 4.8,
+        bonus: 100000000000,
+        novelty: 18,
+        url: "https://bit.ly/4fN7iBF",
+        description: "275% и +210FS к первому депозиту"
+    },
+                {
+        name: "KENT",
+        image: "images/kent.jpg",
+        giftText: "Супер бонус",
+        starRating: 5,
+        bonus: 10000000000000,
+        novelty: 17,
+        url: "https://bit.ly/4eqpNKV",
+        description: "275% и +200FS к первому депозиту"
+    },
 ];
