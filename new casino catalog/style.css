@@ -1,0 +1,889 @@
+:root {
+    --section-margin: 20px auto;
+    --section-padding: 15px 30px;
+    --button-font-size: 1.1rem;
+    --font-size-base: 1rem;
+    --font-size-large: 1.2rem;
+    --primary-color: #f5cc00;
+    --secondary-color: #fff;
+    --background-gradient: linear-gradient(135deg, #0e1413, #1b1f1e);
+    --header-gradient: linear-gradient(to right, #1a1a1a, #333333);
+    --telegram-gradient: linear-gradient(135deg, #f5cc00, #f0b300);
+    --telegram-hover-gradient: linear-gradient(135deg, #ffd700, #e6a800);
+    --garland-gradient: linear-gradient(90deg, transparent, rgba(245, 204, 0, 0.2), transparent);
+}
+
+/* Универсальное применение box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Основные стили */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Темы */
+.dark-theme {
+    background: var(--background-gradient);
+    color: var(--secondary-color);
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--header-gradient);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    transition: background 0.3s ease;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 4rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.title-block {
+    display: flex;
+    flex-direction: column;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color), 0 0 10px rgba(245, 204, 0, 0.4);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin: 5px 0 0 0;
+    color: #ccc;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Унифицированные стили для поиска и кнопок сортировки */
+.control {
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--secondary-color);
+    padding: 0 20px;
+    font-size: var(--button-font-size);
+    outline: none;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.control:hover,
+.control:focus,
+.control.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #000;
+    box-shadow: 0 4px 10px rgba(245, 204, 0, 0.5);
+}
+
+.control i {
+    margin-right: 8px;
+}
+
+/* Поле поиска */
+#searchInput {
+    flex: 1;
+    max-width: 500px;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%; /* Гарантирует, что поле занимает всю доступную ширину */
+}
+
+/* Кнопки сортировки */
+.sort-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.sort-btn {
+    cursor: pointer;
+    flex: none;
+    height: 45px;
+    font-size: var(--button-font-size);
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sort-btn:hover,
+.sort-btn:focus,
+.sort-btn.active {
+    background: var(--primary-color);
+    color: #000;
+    box-shadow: 0 4px 10px rgba(245, 204, 0, 0.5);
+}
+
+.sort-btn i {
+    margin-right: 5px;
+}
+
+/* Новый блок с обновлениями и Telegram-каналом */
+.updates-section {
+    max-width: 1200px;
+    margin: var(--section-margin);
+    padding: var(--section-padding);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    transition: background 0.3s ease;
+    color: var(--secondary-color);
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.updates-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.updates-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.updates-section .telegram-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--telegram-gradient);
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: var(--button-font-size);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.updates-section .telegram-link i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.updates-section .telegram-link:hover {
+    background: var(--telegram-hover-gradient);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 204, 0, 0.5);
+}
+
+/* Контейнер */
+.container {
+    max-width: 1200px;
+    margin: var(--section-margin);
+    padding: 10px; /* Уменьшенные отступы */
+    position: relative;
+}
+
+/* Спиннер загрузки */
+.spinner {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 2rem;
+    color: var(--primary-color);
+    display: none;
+    animation: spin 1s linear infinite;
+}
+
+.spinner.show {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.spinner.hide {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Основной контент */
+main {
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    padding: 10px; /* Уменьшенные отступы */
+    transition: all 0.3s ease;
+}
+
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px; /* Уменьшенные отступы */
+}
+
+/* Карточки казино */
+.casino-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.casino-card.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Кнопка "Избранное" */
+.favorite-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    backdrop-filter: blur(4px);
+}
+
+.favorite-btn:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.favorite-btn.active {
+    color: #f00;
+}
+
+/* Контейнер для лайков */
+.like-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    padding: 4px 8px;
+    border-radius: 12px;
+    z-index: 2;
+}
+
+.like-container i {
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+.like-count {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    position: relative;
+}
+
+/* Кастомные тултипы для лайков */
+.like-container::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.like-container:hover::after {
+    opacity: 1;
+}
+
+/* Изображение казино */
+.casino-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.casino-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+
+.casino-card::before {
+    content: "";
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.casino-card:hover::before {
+    opacity: 1;
+}
+
+/* Контент карточки */
+.content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.content h2 {
+    font-size: 1.3rem;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.content p {
+    margin: 0;
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* Описание казино */
+.description {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Ограничение до 3 строк */
+    -webkit-box-orient: vertical;
+    word-break: break-word; /* Позволяет словам переноситься при необходимости */
+    hyphens: auto; /* Автоматическое разделение слов */
+}
+
+/* Корректное отображение описаний на мобильных устройствах */
+@media (max-width: 768px) {
+    .description {
+        -webkit-line-clamp: 4; /* Увеличить до 4 строк */
+    }
+}
+
+@media (max-width: 480px) {
+    .description {
+        -webkit-line-clamp: 5; /* Увеличить до 5 строк или убрать ограничение */
+        word-break: normal; /* Предотвращает принудительный разрыв слов */
+        hyphens: manual; /* Разрывы слов только при необходимости */
+    }
+}
+
+/* Звездный рейтинг */
+.starRating {
+    color: var(--primary-color);
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    cursor: help;
+}
+
+.starRating::after {
+    content: "Рейтинг: " attr(data-rating) "/5";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.starRating:hover::after {
+    opacity: 1;
+}
+
+.content a {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--primary-color);
+    color: #000;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.content a:hover {
+    background: #ffdd33;
+    transform: translateY(-4px);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #999;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 40px;
+}
+
+/* Back to top button */
+#backToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: rgba(0,0,0,0.5);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#backToTop:hover {
+    background: rgba(0,0,0,0.7);
+    transform: translateY(-2px);
+}
+
+#backToTop.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* No results */
+.no-results {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-top: 20px;
+}
+
+.no-results.hide {
+    display: none;
+}
+
+/* Стили для снежинок */
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.snowflake {
+    color: #fff;
+    font-size: 1em;
+    opacity: 0.8;
+    position: absolute;
+    top: -10%;
+    user-select: none;
+    animation: snowflake-fall linear infinite;
+}
+
+@keyframes snowflake-fall {
+    0% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(100px) rotate(360deg);
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+/* Разнообразие размеров и задержек для снежинок */
+.snowflake:nth-child(odd) {
+    left: calc(10% * var(--i));
+    animation-duration: calc(10s + 2s * var(--i));
+    animation-delay: calc(var(--i) * 1s);
+    font-size: calc(1em + 0.2em * var(--i));
+}
+
+.snowflake:nth-child(even) {
+    left: calc(10% * var(--i));
+    animation-duration: calc(12s + 2s * var(--i));
+    animation-delay: calc(var(--i) * 1s);
+    font-size: calc(1em + 0.1em * var(--i));
+}
+
+/* Стили для гирлянд */
+.garlands {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.garland {
+    width: 100%;
+    height: 10px;
+    background: var(--garland-gradient);
+    position: absolute;
+    top: 10px;
+    animation: garland-move 5s linear infinite;
+    opacity: 0.6;
+}
+
+.garland:nth-child(2) {
+    top: 30px;
+    animation-duration: 7s;
+}
+
+@keyframes garland-move {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Новый блок о честности рейтинга */
+.trust-section {
+    max-width: 1200px;
+    margin: var(--section-margin);
+    padding: var(--section-padding);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    transition: background 0.3s ease;
+    color: var(--secondary-color);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.trust-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.trust-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.trust-section ul {
+    list-style: disc inside;
+    margin-bottom: 20px;
+}
+
+.trust-section li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    /* Для больших планшетов */
+    :root {
+        --section-padding: 15px 20px;
+    }
+
+    .casino-card {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px 20px;
+        margin-bottom: 15px;
+    }
+    .header-right {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        width: 100%;
+    }
+    .sort-buttons {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    #searchInput {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .trust-section {
+        padding: 30px 15px;
+        margin: 30px 0;
+    }
+
+    .trust-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .trust-section p, .trust-section li {
+        font-size: 1rem;
+    }
+
+    .updates-section {
+        margin: var(--section-margin);
+        padding: var(--section-padding);
+    }
+
+    .updates-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .updates-section p {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+
+    .updates-section .telegram-link {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    /* Изменение сетки на планшетах */
+    .grid-view {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    /* Обновление размера кнопок сортировки */
+    .sort-btn {
+        flex: 1 1 45%;
+        margin-bottom: 10px;
+    }
+
+    /* Обновление размера шрифта */
+    .content h2 {
+        font-size: 1.2rem;
+    }
+
+    .content p {
+        font-size: 0.95rem;
+    }
+
+    /* Увеличение количества строк описания на планшетах */
+    .description {
+        -webkit-line-clamp: 4;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-view {
+        grid-template-columns: repeat(2, 1fr); /* Два блока на строку */
+        gap: 10px; /* Уменьшенные отступы */
+    }
+
+    .header-right {
+        width: 100%;
+    }
+
+    #searchInput {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px 15px; /* Увеличенные паддинги для удобства */
+        font-size: 0.95rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+    .tagline {
+        font-size: 1rem;
+    }
+    .sort-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 1rem;
+    }
+
+    .description {
+        -webkit-line-clamp: 5; /* Увеличить до 5 строк или убрать ограничение */
+        word-break: normal; /* Предотвращает принудительный разрыв слов */
+        hyphens: manual; /* Разрывы слов только при необходимости */
+    }
+
+    .updates-section {
+        margin: 20px 0;
+        padding: 10px 10px; /* Уменьшенные паддинги */
+    }
+
+    .updates-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .updates-section p {
+        font-size: 0.9rem;
+    }
+
+    .updates-section .telegram-link {
+        padding: 8px 16px;
+        font-size: 0.95rem;
+    }
+
+    /* Изменение размеров элементов карточек казино */
+    .casino-card {
+        padding: 10px;
+    }
+
+    .content h2 {
+        font-size: 1.1rem;
+    }
+
+    .content a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    /* Back to top button */
+    #backToTop {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    /* Увеличение количества строк описания на мобильных устройствах */
+    .description {
+        -webkit-line-clamp: 5; /* Можно увеличить или убрать ограничение */
+        word-break: normal; /* Предотвращает принудительный разрыв слов */
+        hyphens: manual; /* Разрывы слов только при необходимости */
+    }
+}
+
+/* Дополнительные оптимизации для улучшения пользовательского опыта на мобильных устройствах */
+
+/* Улучшение интерактивности кнопок */
+button,
+.sort-btn,
+.telegram-link,
+.favorite-btn,
+#backToTop {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Увеличение области нажатия для кнопок */
+button,
+.sort-btn,
+.telegram-link,
+.favorite-btn,
+#backToTop {
+    min-height: 40px;
+    min-width: 40px;
+}
+
+/* Оптимизация изображений для мобильных устройств */
+.casino-card img {
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+}
+
+/* Улучшение видимости текста на мобильных устройствах */
+body, 
+header, 
+section, 
+footer {
+    font-size: var(--font-size-base);
+}

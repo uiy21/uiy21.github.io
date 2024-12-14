@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Топ Казино - Лучшие и Надежные Онлайн Казино 2024</title>
+    <meta name="description" content="Топ Казино предоставляет честные и надежные рейтинги лучших онлайн казино. Узнайте о лучших бонусах, рейтингах и новинках в мире азартных игр.">
+    <meta name="keywords" content="топ казино, лучшие казино, честные рейтинги казино, онлайн казино, бонусы казино">
+    <meta name="author" content="Ваше Имя">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com">
+
+    <!-- Open Graph Meta Tags для улучшения SEO и социального обмена -->
+    <meta property="og:title" content="Топ Казино - Лучшие и Надежные Онлайн Казино 2024">
+    <meta property="og:description" content="Топ Казино предоставляет честные и надежные рейтинги лучших онлайн казино. Узнайте о лучших бонусах, рейтингах и новинках в мире азартных игр.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://yourwebsite.com/images/og-image.jpg">
+    
+    <!-- JSON-LD структурированные данные для улучшения SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Топ Казино",
+      "url": "https://yourwebsite.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://yourwebsite.com/?s={search_term}",
+        "query-input": "required name=search_term"
+      }
+    }
+    </script>
+
+    <!-- Подключение Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <!-- Подключение Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Подключение Tippy.js CSS (опционально) -->
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <header>
+        <div class="snowflakes" aria-hidden="true">
+            <!-- Пример снежинок -->
+            <div class="snowflake" style="--i:1;">❄</div>
+            <div class="snowflake" style="--i:2;">❄</div>
+            <div class="snowflake" style="--i:3;">❄</div>
+            <!-- Добавьте больше снежинок по необходимости -->
+        </div>
+        <div class="garlands" aria-hidden="true">
+            <div class="garland"></div>
+            <div class="garland"></div>
+        </div>
+        <div class="header-left">
+            <div class="logo"><i class="fas fa-dice"></i></div>
+            <div class="title-block">
+                <h1>Топ Казино</h1>
+                <p class="tagline">Лучшие казино по рейтингу</p>
+            </div>
+        </div>
+        <div class="header-right">
+            <input type="text" id="searchInput" class="control" placeholder="Поиск по названию..." aria-label="Поиск по названию казино">
+            <div class="sort-buttons">
+                <button data-sort="new" class="sort-btn control active" title="Сортировать по новизне" aria-label="Сортировать по новизне">
+                    <i class="fas fa-fire"></i> Новые
+                </button>
+                <button data-sort="bonus" class="sort-btn control" title="Сортировать по бонусу" aria-label="Сортировать по бонусу">
+                    <i class="fas fa-coins"></i> Бонус
+                </button>
+                <button data-sort="rating" class="sort-btn control" title="Сортировать по рейтингу" aria-label="Сортировать по рейтингу">
+                    <i class="fas fa-star"></i> Рейтинг
+                </button>
+                <!-- Новая кнопка "Случайный" -->
+                <button data-sort="random" class="sort-btn control" title="Выбрать случайное казино" aria-label="Выбрать случайное казино">
+                    <i class="fas fa-random"></i> Случайный
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Новый блок с обновлениями и Telegram-каналом -->
+    <section class="updates-section">
+        <h2>Следите за обновлениями и новыми бонусами</h2>
+        <p>Присоединяйтесь к нашему Telegram-каналу, чтобы быть в курсе всех последних новостей, акций и эксклюзивных предложений от лучших онлайн казино.</p>
+        <a href="https://t.me/your_telegram_channel" target="_blank" rel="noopener noreferrer" class="telegram-link">
+            <i class="fab fa-telegram-plane"></i> Наш Telegram-канал
+        </a>
+    </section>
+    
+    <div class="container">
+        <div id="loadingSpinner" class="spinner hide">
+            <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        <main id="casinoList" class="grid-view">
+            <!-- Пример карточки казино -->
+            <div class="casino-card visible">
+                <button class="favorite-btn" aria-label="Добавить в избранное"><i class="fas fa-heart"></i></button>
+                <div class="like-container" data-tooltip="Нравится">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span class="like-count">123</span>
+                </div>
+                <img src="casino-image.jpg" alt="Название Казино" loading="lazy">
+                <div class="content">
+                    <h2>Название Казино</h2>
+                    <p class="description">Краткое описание казино...</p>
+                    <div class="starRating" data-rating="4.5">★★★★☆</div>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Перейти в казино</a>
+                </div>
+            </div>
+            <!-- Добавьте больше карточек по необходимости -->
+        </main>
+        <div class="no-results hide">Ничего не найдено.</div>
+    </div>
+
+    <!-- Новый блок о честности рейтинга -->
+    <section class="trust-section">
+        <div class="trust-container">
+            <h2>Почему наш рейтинг идеален и честен</h2>
+            <div itemscope itemtype="https://schema.org/Review">
+                <p itemprop="reviewBody">В "Топ Казино" мы стремимся предоставить нашим пользователям максимально достоверную и объективную информацию о лучших онлайн казино. Наши эксперты тщательно анализируют каждое казино по ряду критериев, включая бонусные предложения, надежность, качество обслуживания клиентов и безопасность.</p>
+                <div itemprop="author" itemscope itemtype="https://schema.org/Organization">
+                    <meta itemprop="name" content="Топ Казино">
+                </div>
+                <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="bestRating" content="5">
+                </div>
+            </div>
+            <ul>
+                <li><strong>Объективные оценки:</strong> Мы используем прозрачные методологии оценки, чтобы гарантировать честность наших рейтингов.</li>
+                <li><strong>Независимые обзоры:</strong> Все наши обзоры проводятся независимо, без влияния рекламодателей.</li>
+                <li><strong>Актуальная информация:</strong> Мы регулярно обновляем наши рейтинги, чтобы они всегда отражали текущую ситуацию на рынке.</li>
+                <li><strong>Отзывы пользователей:</strong> Мы учитываем мнения и отзывы реальных игроков, чтобы наши рейтинги были максимально точными и полезными.</li>
+            </ul>
+            <p>Наша цель – помочь вам сделать осознанный выбор и найти онлайн казино, которое идеально подходит именно вам. Доверяйте нашему рейтингу и наслаждайтесь безопасными и увлекательными игровыми сессиями!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Casino Catalog. Все права защищены.</p>
+    </footer>
+    <button id="backToTop" title="Наверх" aria-label="Наверх"><i class="fas fa-angle-up"></i></button>
+    
+    <!-- Подключение Tippy.js (опционально) -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    
+    <script src="casinos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
