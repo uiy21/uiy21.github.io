@@ -47,11 +47,55 @@ const sortCasinos = (criteria, list) => {
         case "rating":
             sorted.sort((a, b) => b.starRating - a.starRating);
             break;
+        case "likes":
+            sorted.sort((a, b) => b.totalLikes - a.totalLikes);
+            break;
         case "new":
         default:
             sorted.sort((a, b) => b.novelty - a.novelty);
     }
     return sorted;
+}
+
+// Детерминированная функция для генерации псевдослучайного числа на основе строки
+const pseudoRandom = (str) => {
+    let hash = 0;
+    for(let i =0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+        hash = hash & hash; // Convert to 32bit integer
+    }
+    const rand = Math.abs(Math.sin(hash)) * 10000;
+    return rand - Math.floor(rand);
+}
+
+// Функция для генерации псевдослучайного увеличения лайков от 1 до 15
+const getLikesIncrement = (casinoName, dayIndex) => {
+    const seed = `${casinoName}-${dayIndex}`;
+    const rand = pseudoRandom(seed);
+    return Math.floor(rand * 15) + 1; // 1-15
+}
+
+// Функция для расчета текущих лайков
+const calculateCurrentLikes = (casino) => {
+    const currentDate = new Date();
+    const startDate = new Date(casino.startDate);
+    const timeDiff = currentDate - startDate;
+    const daysPassed = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+    if (daysPassed < 0) return casino.baseLikes;
+
+    let totalLikes = casino.baseLikes;
+
+    // Учитываем новизну: чем меньше новизна, тем меньше лайков
+    // Например, можем уменьшить количество дней для генерации лайков
+    const adjustedDays = Math.max(daysPassed - (20 - casino.novelty), 0); // Пример регулировки
+    const actualDays = adjustedDays < daysPassed ? adjustedDays : daysPassed;
+
+    for(let i =1; i<=actualDays; i++) {
+        totalLikes += getLikesIncrement(casino.name, i);
+    }
+
+    return totalLikes;
 }
 
 // Функция для рендеринга казино
@@ -70,15 +114,22 @@ const renderCasinos = (list) => {
     const favorites = getFavorites();
 
     list.forEach(casino => {
+        const currentLikes = calculateCurrentLikes(casino);
+        const userLiked = favorites.has(casino.name);
+        const totalLikes = userLiked ? currentLikes + 1 : currentLikes;
+
+        // Добавляем свойство totalLikes для сортировки
+        casino.totalLikes = totalLikes;
+
         const card = document.createElement("div");
         card.className = "casino-card";
         card.innerHTML = `
             <button class="favorite-btn" data-name="${casino.name}" aria-label="Добавить в избранное">
                 <i class="fas fa-heart"></i>
             </button>
-            <div class="like-container" aria-label="Количество лайков">
+            <div class="like-container" data-tooltip="Нравится" aria-label="Количество лайков">
                 <i class="fas fa-thumbs-up"></i>
-                <span class="like-count">${casino.likes}</span>
+                <span class="like-count">${totalLikes}</span>
             </div>
             <img src="${casino.image}" alt="${casino.name}" loading="lazy">
             <div class="content">
@@ -112,7 +163,7 @@ const renderCasinos = (list) => {
     // Инициализация тултипов
     if (typeof tippy !== 'undefined') {
         tippy('.like-container', {
-            content: 'Количество лайков',
+            content: 'Нравится',
             placement: 'top',
             animation: 'scale',
             theme: 'light',
@@ -155,11 +206,11 @@ sortButtons.forEach(btn => {
         sortButtons.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
 
+        currentSort = sortType;
+
         if (sortType === "random") {
-            currentSort = sortType;
             triggerRandomSelection();
         } else {
-            currentSort = sortType;
             renderCasinos(sortCasinos(currentSort, filteredCasinos));
         }
     });
@@ -224,6 +275,11 @@ casinoList.addEventListener("click", (e) => {
             const card = favBtn.closest(".casino-card");
             const likeCount = card.querySelector(".like-count");
             likeCount.textContent = Math.max(0, parseInt(likeCount.textContent) - 1);
+            // Уменьшаем totalLikes в объекте казино
+            const casino = casinos.find(c => c.name === casinoName);
+            if (casino) {
+                casino.totalLikes = Math.max(0, casino.totalLikes - 1);
+            }
         } else {
             favorites.add(casinoName);
             favBtn.classList.add("active");
@@ -231,6 +287,11 @@ casinoList.addEventListener("click", (e) => {
             const card = favBtn.closest(".casino-card");
             const likeCount = card.querySelector(".like-count");
             likeCount.textContent = parseInt(likeCount.textContent) + 1;
+            // Увеличиваем totalLikes в объекте казино
+            const casino = casinos.find(c => c.name === casinoName);
+            if (casino) {
+                casino.totalLikes += 1;
+            }
         }
 
         saveFavorites(favorites);

@@ -441,7 +441,6 @@ main {
     }
 }
 
-/* Звездный рейтинг */
 .starRating {
     color: var(--primary-color);
     font-size: 1rem;
@@ -722,6 +721,7 @@ footer {
         margin: var(--section-margin);
         padding: var(--section-padding);
     }
+    
 
     .updates-section h2 {
         font-size: 1.5rem;
@@ -848,6 +848,22 @@ footer {
         -webkit-line-clamp: 5; /* Можно увеличить или убрать ограничение */
         word-break: normal; /* Предотвращает принудительный разрыв слов */
         hyphens: manual; /* Разрывы слов только при необходимости */
+    }
+
+    /* Фиксация шапки на мобильных устройствах */
+    header {
+        position:relative; /* Фиксированное положение */
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 10px 15px; /* Уменьшенные отступы */
+        margin-bottom: 0; /* Удаление отступа снизу */
+    }
+
+    /* Добавление отступа сверху основного контента, чтобы избежать перекрытия фиксированной шапки */
+    .container {
+        padding-top: 80px; /* Регулируйте значение в зависимости от высоты шапки */
     }
 }
 

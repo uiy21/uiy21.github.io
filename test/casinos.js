@@ -1,3 +1,5 @@
+// casinos.js
+
 const casinos = [
     {
         name: "1GO",
@@ -8,7 +10,9 @@ const casinos = [
         description: "125 фриспинов и +150% за первые депозиты",
         giftText: "Специальный бонус",
         starRating: 4.5,
-        likes: 18 // (12 * 1.5)
+        baseLikes: 18, // (12 * 1.5)
+        startDate: "2024-11-04", // Текущая дата (2024-12-16) минус novelty (12 дней)
+        likesPerDay: 1.5
     },
     {
         name: "DRIP",
@@ -19,7 +23,9 @@ const casinos = [
         description: "200 фриспинов и +325% за первые депозиты",
         giftText: "Большой бонус",
         starRating: 4.7,
-        likes: 10 // (7 * 1.5)
+        baseLikes: 10, // (7 * 1.5)
+        startDate: "2024-12-09",
+        likesPerDay: 1.5
     },
     {
         name: "GAMA",
@@ -30,7 +36,9 @@ const casinos = [
         description: "+200% к первому депозиту и 200 фриспинов",
         giftText: "Эксклюзивный бонус",
         starRating: 4.2,
-        likes: 9 // (6 * 1.5)
+        baseLikes: 9, // (6 * 1.5)
+        startDate: "2024-12-10",
+        likesPerDay: 1.5
     },
     {
         name: "STARDA",
@@ -41,7 +49,9 @@ const casinos = [
         description: "+100% к первому депозиту и до 500 фриспинов",
         giftText: "Сюрприз бонус",
         starRating: 4.0,
-        likes: 7 // (5 * 1.5)
+        baseLikes: 7, // (5 * 1.5)
+        startDate: "2024-12-11",
+        likesPerDay: 1.5
     },
     {
         name: "ROX",
@@ -52,7 +62,9 @@ const casinos = [
         description: "250 фриспинов и +200% к первому депозиту",
         giftText: "Роскошный бонус",
         starRating: 4.3,
-        likes: 4 // (3 * 1.5)
+        baseLikes: 4, // (3 * 1.5)
+        startDate: "2024-12-13",
+        likesPerDay: 1.5
     },
     {
         name: "LEGZO",
@@ -63,7 +75,9 @@ const casinos = [
         description: "500 фриспинов и +100% к первому депозиту",
         giftText: "Легендарный бонус",
         starRating: 4.1,
-        likes: 3 // (2 * 1.5)
+        baseLikes: 3, // (2 * 1.5)
+        startDate: "2024-12-14",
+        likesPerDay: 1.5
     },
     {
         name: "CAT CASINO",
@@ -74,7 +88,9 @@ const casinos = [
         description: "200 фриспинов и +325% за первые депозиты",
         giftText: "Бонус для котиков",
         starRating: 4.4,
-        likes: 6 // (4 * 1.5)
+        baseLikes: 6, // (4 * 1.5)
+        startDate: "2024-12-12",
+        likesPerDay: 1.5
     },
     {
         name: "MONRO",
@@ -85,7 +101,9 @@ const casinos = [
         description: "10% кэшбэк и +150% к первому депозиту",
         giftText: "Мега бонус",
         starRating: 4.8,
-        likes: 12 // (8 * 1.5)
+        baseLikes: 12, // (8 * 1.5)
+        startDate: "2024-12-08",
+        likesPerDay: 1.5
     },
     {
         name: "DADDY",
@@ -96,7 +114,9 @@ const casinos = [
         description: "10% кэшбэк и +150% к первому депозиту",
         giftText: "Папин бонус",
         starRating: 4.6,
-        likes: 13 // (9 * 1.5)
+        baseLikes: 13, // (9 * 1.5)
+        startDate: "2024-12-07",
+        likesPerDay: 1.5
     },
     {
         name: "LEX",
@@ -107,7 +127,9 @@ const casinos = [
         description: "400 фриспинов и +225% к первому депозиту",
         giftText: "Топ бонус",
         starRating: 4.9,
-        likes: 21 // (14 * 1.5)
+        baseLikes: 21, // (14 * 1.5)
+        startDate: "2024-11-30", // Дата с учетом текущей даты 2024-12-16 минус 14 дней
+        likesPerDay: 1.5
     },
     {
         name: "GIZBO",
@@ -118,7 +140,9 @@ const casinos = [
         description: "225% и +600% к первому депозиту",
         giftText: "Топ бонус",
         starRating: 4.9,
-        likes: 15 // (10 * 1.5)
+        baseLikes: 15, // (10 * 1.5)
+        startDate: "2024-12-06",
+        likesPerDay: 1.5
     },
     {
         name: "KOMETA",
@@ -129,7 +153,9 @@ const casinos = [
         description: "225% и +500FS к первому депозиту",
         giftText: "Крутой бонус",
         starRating: 4.6,
-        likes: 28 // (19 * 1.5)
+        baseLikes: 28, // (19 * 1.5)
+        startDate: "2024-11-27",
+        likesPerDay: 1.5
     },
     {
         name: "R7",
@@ -140,7 +166,9 @@ const casinos = [
         description: "275% и +210FS к первому депозиту",
         giftText: "Классный бонус",
         starRating: 4.8,
-        likes: 27 // (18 * 1.5)
+        baseLikes: 27, // (18 * 1.5)
+        startDate: "2024-11-28",
+        likesPerDay: 1.5
     },
     {
         name: "KENT",
@@ -151,6 +179,8 @@ const casinos = [
         description: "275% и +200FS к первому депозиту",
         giftText: "Супер бонус",
         starRating: 5,
-        likes: 25 // (17 * 1.5)
+        baseLikes: 25, // (17 * 1.5)
+        startDate: "2024-11-29",
+        likesPerDay: 1.5
     },
 ];
