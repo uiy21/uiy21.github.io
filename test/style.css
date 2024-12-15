@@ -697,7 +697,7 @@ footer {
         width: 100%;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 5px;
     }
     #searchInput {
         width: 100%;
@@ -805,16 +805,17 @@ footer {
     }
 
     .updates-section {
-        margin: 20px 0;
+        margin: 10px 10px 10px 10px;
         padding: 10px 10px; /* Уменьшенные паддинги */
     }
 
     .updates-section h2 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
     .updates-section p {
         font-size: 0.9rem;
+        display: none;
     }
 
     .updates-section .telegram-link {
@@ -859,11 +860,6 @@ footer {
         right: 0;
         padding: 10px 15px; /* Уменьшенные отступы */
         margin-bottom: 0; /* Удаление отступа снизу */
-    }
-
-    /* Добавление отступа сверху основного контента, чтобы избежать перекрытия фиксированной шапки */
-    .container {
-        padding-top: 80px; /* Регулируйте значение в зависимости от высоты шапки */
     }
 }
 
