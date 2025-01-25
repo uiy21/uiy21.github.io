@@ -7,7 +7,8 @@ const casinos = [
         url: "https://bit.ly/48jpChA",
         description: "125 фриспинов и +150% за первые депозиты",
         giftText: "Специальный бонус",
-        starRating: 4.5
+        starRating: 4.5,
+        likes: 18 // (12 * 1.5)
     },
     {
         name: "DRIP",
@@ -17,7 +18,8 @@ const casinos = [
         url: "https://bit.ly/3VjbgdS",
         description: "200 фриспинов и +325% за первые депозиты",
         giftText: "Большой бонус",
-        starRating: 4.7
+        starRating: 4.7,
+        likes: 10 // (7 * 1.5)
     },
     {
         name: "GAMA",
@@ -27,7 +29,8 @@ const casinos = [
         url: "https://bit.ly/3YU10L3",
         description: "+200% к первому депозиту и 200 фриспинов",
         giftText: "Эксклюзивный бонус",
-        starRating: 4.2
+        starRating: 4.2,
+        likes: 9 // (6 * 1.5)
     },
     {
         name: "STARDA",
@@ -37,7 +40,8 @@ const casinos = [
         url: "https://bit.ly/3juckvm",
         description: "+100% к первому депозиту и до 500 фриспинов",
         giftText: "Сюрприз бонус",
-        starRating: 4.0
+        starRating: 4.0,
+        likes: 7 // (5 * 1.5)
     },
     {
         name: "ROX",
@@ -47,7 +51,8 @@ const casinos = [
         url: "https://bit.ly/3sKDIGg",
         description: "250 фриспинов и +200% к первому депозиту",
         giftText: "Роскошный бонус",
-        starRating: 4.3
+        starRating: 4.3,
+        likes: 4 // (3 * 1.5)
     },
     {
         name: "LEGZO",
@@ -57,7 +62,8 @@ const casinos = [
         url: "https://bit.ly/3NwJ1CY",
         description: "500 фриспинов и +100% к первому депозиту",
         giftText: "Легендарный бонус",
-        starRating: 4.1
+        starRating: 4.1,
+        likes: 3 // (2 * 1.5)
     },
     {
         name: "CAT CASINO",
@@ -67,7 +73,8 @@ const casinos = [
         url: "https://bit.ly/3fNw4YQ",
         description: "200 фриспинов и +325% за первые депозиты",
         giftText: "Бонус для котиков",
-        starRating: 4.4
+        starRating: 4.4,
+        likes: 6 // (4 * 1.5)
     },
     {
         name: "MONRO",
@@ -77,7 +84,8 @@ const casinos = [
         url: "https://bit.ly/3tHGwba",
         description: "10% кэшбэк и +150% к первому депозиту",
         giftText: "Мега бонус",
-        starRating: 4.8
+        starRating: 4.8,
+        likes: 12 // (8 * 1.5)
     },
     {
         name: "DADDY",
@@ -87,7 +95,8 @@ const casinos = [
         url: "https://bit.ly/3yK9ZDC",
         description: "10% кэшбэк и +150% к первому депозиту",
         giftText: "Папин бонус",
-        starRating: 4.6
+        starRating: 4.6,
+        likes: 13 // (9 * 1.5)
     },
     {
         name: "LEX",
@@ -97,46 +106,51 @@ const casinos = [
         url: "https://bit.ly/3KiyZEr",
         description: "400 фриспинов и +225% к первому депозиту",
         giftText: "Топ бонус",
-        starRating: 4.9
+        starRating: 4.9,
+        likes: 21 // (14 * 1.5)
     },
     {
         name: "GIZBO",
         image: "images/gizby.jpg",
-        giftText: "Топ бонус",
-        starRating: 4.9,
         bonus: 10000000000,
         novelty: 10,
         url: "https://bit.ly/40KLBxz",
-        description: "225% и +600% к первому депозиту"
+        description: "225% и +600% к первому депозиту",
+        giftText: "Топ бонус",
+        starRating: 4.9,
+        likes: 15 // (10 * 1.5)
     },
-        {
+    {
         name: "KOMETA",
         image: "images/kometa.jpg",
-        giftText: "Крутой бонус",
-        starRating: 4.6,
         bonus: 10000000000,
         novelty: 19,
         url: "https://bit.ly/40RfHPY",
-        description: "225% и +500FS к первому депозиту"
+        description: "225% и +500FS к первому депозиту",
+        giftText: "Крутой бонус",
+        starRating: 4.6,
+        likes: 28 // (19 * 1.5)
     },
-            {
+    {
         name: "R7",
         image: "images/r7.jpg",
-        giftText: "Классный бонус",
-        starRating: 4.8,
         bonus: 100000000000,
         novelty: 18,
         url: "https://bit.ly/4fN7iBF",
-        description: "275% и +210FS к первому депозиту"
+        description: "275% и +210FS к первому депозиту",
+        giftText: "Классный бонус",
+        starRating: 4.8,
+        likes: 27 // (18 * 1.5)
     },
-                {
+    {
         name: "KENT",
         image: "images/kent.jpg",
-        giftText: "Супер бонус",
-        starRating: 5,
         bonus: 10000000000000,
         novelty: 17,
         url: "https://bit.ly/4eqpNKV",
-        description: "275% и +200FS к первому депозиту"
+        description: "275% и +200FS к первому депозиту",
+        giftText: "Супер бонус",
+        starRating: 5,
+        likes: 25 // (17 * 1.5)
     },
 ];
