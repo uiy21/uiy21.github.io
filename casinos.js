@@ -136,7 +136,7 @@ const casinos = [
         image: "images/irwin.jpg",
         bonus: 100000000000,
         novelty: 20,
-        url: "https://bit.ly/4aushYx",
+        url: "https://bit.ly/3PTdLzZ",
         description: "150% к депозиту и куча всего еще",
         giftText: "Классный бонус",
         starRating: 4.8,
