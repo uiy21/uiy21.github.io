@@ -439,6 +439,7 @@ main {
         word-break: normal; /* Предотвращает принудительный разрыв слов */
         hyphens: manual; /* Разрывы слов только при необходимости */
     }
+    
 }
 
 /* Звездный рейтинг */
@@ -897,3 +898,4 @@ section,
 footer {
     font-size: var(--font-size-base);
 }
+
