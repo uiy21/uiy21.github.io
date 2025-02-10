@@ -4,88 +4,99 @@
   <meta charset="UTF-8">
   <title>Сигнал</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Подключаем Google Fonts -->
+  <!-- Подключаем шрифт Roboto для современного вида -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    /* Общие стили */
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      padding: 0;
+      padding: 20px;
       font-family: 'Roboto', sans-serif;
-      background-color: #16191b;
+      background-color: #15181b; /* Единый фон всего приложения */
       color: #fff;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       min-height: 100vh;
     }
-    .card {
-      background-color: #1e2227;
-      border-radius: 15px;
-      padding: 20px;
+    .container {
+      width: 100%;
       max-width: 400px;
-      width: 90%;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      text-align: center;
     }
-    .card h2 {
-      margin-top: 0;
+    h2 {
+      margin-bottom: 10px;
       font-weight: 700;
+      font-size: 24px;
     }
-    .select-wrapper {
-      margin-top: 20px;
+    p {
+      margin: 10px 0;
+      font-size: 16px;
     }
-    select {
+    /* Секция элементов управления */
+    #controls {
+      margin-bottom: 20px;
+    }
+    select, .btn {
       width: 100%;
       padding: 12px;
-      border: none;
+      font-size: 16px;
       border-radius: 8px;
+      border: none;
+      margin-bottom: 10px;
+    }
+    select {
       background-color: #2a2e35;
       color: #fff;
-      font-size: 16px;
-      margin-bottom: 20px;
       appearance: none;
     }
     .btn {
-      display: inline-block;
-      width: 100%;
-      padding: 12px;
       background-color: #0088cc;
       color: #fff;
-      font-size: 16px;
-      font-weight: 700;
-      border: none;
-      border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s;
-      margin-bottom: 20px;
     }
     .btn:hover {
       background-color: #006699;
     }
+    /* Стиль для блока со статусом */
+    #status {
+      min-height: 40px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    /* Стилизация сетки результатов */
     .grid {
       display: grid;
       grid-template-columns: repeat(5, 60px);
       grid-gap: 10px;
       justify-content: center;
+      margin-top: 20px;
+      display: none; /* Изначально скрыта */
     }
     .cell {
       width: 60px;
       height: 60px;
-      background-color: #16191b;
+      background-color: #15181b;
       border-radius: 8px;
       background-size: cover;
       background-position: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    }
+    /* Подпись с итоговой информацией */
+    #caption {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
-  <div class="card">
+  <div class="container">
     <h2>Получить сигнал</h2>
-    <p>Выберите количество бомб (от 2 до 10):</p>
-    <div class="select-wrapper">
+    <!-- Элементы управления: селектор и кнопка -->
+    <div id="controls">
+      <p>Выберите количество бомб (от 2 до 10):</p>
       <select id="bombCount">
         <option value="2">2</option>
         <option value="3">3</option>
@@ -97,41 +108,94 @@
         <option value="9">9</option>
         <option value="10">10</option>
       </select>
+      <button class="btn" id="generateBtn">Сгенерировать сигнал</button>
     </div>
-    <button class="btn" id="generateBtn">Сгенерировать сигнал</button>
+    <!-- Блок для показа этапов генерации -->
+    <div id="status"></div>
+    <!-- Сетка результатов (5x5) -->
     <div id="grid" class="grid"></div>
+    <!-- Подпись с информацией о сигнале -->
+    <div id="caption"></div>
   </div>
   <script>
-    document.getElementById('generateBtn').addEventListener('click', function() {
-      var bombCount = parseInt(document.getElementById('bombCount').value);
-      var totalCells = 25;
-      var cells = new Array(totalCells).fill('diamond');
-      
-      // Генерируем bombCount уникальных индексов для установки бомб
-      var bombIndices = [];
-      while(bombIndices.length < bombCount) {
-          var index = Math.floor(Math.random() * totalCells);
-          if(bombIndices.indexOf(index) === -1) {
-              bombIndices.push(index);
-          }
+    // Функция имитации "магии" генерации сигнала с анимацией и задержками
+    async function simulateSignal() {
+      const steps = [
+        "🔍 Инициализация модуля анализа сигналов...",
+        "💾 Загрузка алгоритмов предсказания...",
+        "⚙️ Подключение к ядерной базе данных...",
+        "🔄 Сканирование нейронных сетей...",
+        "🚀 Расчёт оптимальных параметров сигнала...",
+        "✨ Формирование финального прогноза..."
+      ];
+      const statusDiv = document.getElementById("status");
+      for (let step of steps) {
+        statusDiv.textContent = step;
+        // Задержка от 1 до 1.5 секунд на каждом этапе
+        await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 500));
       }
-      bombIndices.forEach(function(i) {
-          cells[i] = 'bomb';
-      });
+      statusDiv.textContent = "";
+    }
+    
+    // Функция форматирования даты/времени
+    function formatDate(date) {
+      const dd = String(date.getDate()).padStart(2, '0');
+      const mm = String(date.getMonth() + 1).padStart(2, '0');
+      const yyyy = date.getFullYear();
+      const HH = String(date.getHours()).padStart(2, '0');
+      const MM = String(date.getMinutes()).padStart(2, '0');
+      return `${dd} ${mm} ${yyyy} ${HH}:${MM}`;
+    }
+    
+    // Обработчик нажатия на кнопку "Сгенерировать сигнал"
+    document.getElementById("generateBtn").addEventListener("click", async function() {
+      // Скрываем панель управления во время генерации
+      document.getElementById("controls").style.display = "none";
+      // Очищаем предыдущие результаты
+      document.getElementById("grid").style.display = "none";
+      document.getElementById("caption").innerHTML = "";
       
-      // Отображаем сгенерированное поле
-      var gridDiv = document.getElementById('grid');
-      gridDiv.innerHTML = '';
-      cells.forEach(function(cell) {
-          var cellDiv = document.createElement('div');
-          cellDiv.className = 'cell';
-          if(cell === 'diamond'){
-              cellDiv.style.backgroundImage = "url('dimond.png')";
-          } else {
-              cellDiv.style.backgroundImage = "url('bomb.png')";
-          }
-          gridDiv.appendChild(cellDiv);
+      const bombCount = parseInt(document.getElementById("bombCount").value);
+      const totalCells = 25;
+      let cells = new Array(totalCells).fill("diamond");
+      
+      // Генерируем bombCount уникальных позиций для бомб
+      let bombIndices = [];
+      while (bombIndices.length < bombCount) {
+        let index = Math.floor(Math.random() * totalCells);
+        if (!bombIndices.includes(index)) {
+          bombIndices.push(index);
+        }
+      }
+      bombIndices.forEach(i => cells[i] = "bomb");
+      
+      // Запускаем анимацию генерации сигнала
+      await simulateSignal();
+      
+      // Генерируем данные для подписи
+      const gameNumber = Math.floor(13425 + Math.random() * (124345 - 13425));
+      const now = new Date();
+      const formattedTime = formatDate(now);
+      const chance = (91 + Math.random() * 7).toFixed(2);
+      
+      // Формируем и отображаем сетку с результатом
+      const gridDiv = document.getElementById("grid");
+      gridDiv.innerHTML = "";
+      cells.forEach(cell => {
+        const cellDiv = document.createElement("div");
+        cellDiv.className = "cell";
+        cellDiv.style.backgroundImage = cell === "diamond" ? "url('dimond.png')" : "url('bomb.png')";
+        gridDiv.appendChild(cellDiv);
       });
+      gridDiv.style.display = "grid";
+      
+      // Отображаем итоговую подпись
+      const captionDiv = document.getElementById("caption");
+      captionDiv.innerHTML = `<p>💣 Игра №${gameNumber}<br>🕓 ${formattedTime}</p>
+                              <p>Шанс - ${chance}%<br>❗️ Избегайте бомбочек.</p>`;
+      
+      // Восстанавливаем элементы управления для повторного запуска
+      document.getElementById("controls").style.display = "block";
     });
   </script>
 </body>
