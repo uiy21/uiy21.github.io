@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Сигнал</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #16191b; /* Фон изменён на нужный цвет */
+      margin: 0;
+      padding: 20px;
+      color: #fff; /* Чтобы текст был читаемым на тёмном фоне */
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #222; /* Немного более светлый фон для контейнера */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    select, .btn {
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+    .btn {
+      background: #0088cc;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover {
+      background: #006699;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 60px);
+      grid-gap: 5px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .cell {
+      width: 60px;
+      height: 60px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Получить сигнал</h2>
+    <p>Выберите количество бомб (от 2 до 10):</p>
+    <select id="bombCount">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+    <br>
+    <button class="btn" id="generateBtn">Сгенерировать сигнал</button>
+    <div id="grid" class="grid"></div>
+  </div>
+  <script>
+    document.getElementById('generateBtn').addEventListener('click', function(){
+      var bombCount = parseInt(document.getElementById('bombCount').value);
+      var totalCells = 25;
+      // По умолчанию все ячейки – алмазы
+      var cells = new Array(totalCells).fill('diamond');
+      
+      // Выбираем bombCount уникальных индексов для ячеек с бомбами
+      var bombIndices = [];
+      while(bombIndices.length < bombCount){
+          var index = Math.floor(Math.random() * totalCells);
+          if(bombIndices.indexOf(index) === -1) {
+              bombIndices.push(index);
+          }
+      }
+      bombIndices.forEach(function(i){
+          cells[i] = 'bomb';
+      });
+      
+      // Отображаем сгенерированное поле
+      var gridDiv = document.getElementById('grid');
+      gridDiv.innerHTML = '';
+      cells.forEach(function(cell){
+          var cellDiv = document.createElement('div');
+          cellDiv.className = 'cell';
+          if(cell === 'diamond'){
+              cellDiv.style.backgroundImage = "url('dimond.png')";
+          } else {
+              cellDiv.style.backgroundImage = "url('bomb.png')";
+          }
+          gridDiv.appendChild(cellDiv);
+      });
+    });
+  </script>
+</body>
+</html>
